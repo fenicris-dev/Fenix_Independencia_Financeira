@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fênix | Rota da Independência</title>
+
+<!-- PWA: instalável na tela inicial, ícones provisórios (troca quando a logo oficial chegar).
+     Manifest e ícones embutidos (data URI) para funcionar mesmo como arquivo único
+     (ex.: pré-visualização); quando hospedado de verdade (GitHub Pages), o
+     manifest.json e os ícones separados também estão disponíveis, se preferir usá-los. -->
+<link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%20%22F%C3%AAnix%20%7C%20Rota%20da%20Independ%C3%AAncia%22%2C%20%22short_name%22%3A%20%22Rota%20da%20Independ%C3%AAncia%22%2C%20%22description%22%3A%20%22Do%20d%C3%A9ficit%20%C3%A0%20independ%C3%AAncia%20financeira.%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22scope%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22orientation%22%3A%20%22portrait-primary%22%2C%20%22background_color%22%3A%20%22%23F3F4F9%22%2C%20%22theme_color%22%3A%20%22%23041273%22%2C%20%22lang%22%3A%20%22pt-BR%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAMY0lEQVR4nO3deXRU1R0H8O%2BbN1kgkLAEkc2DIosFAoRFRK3Kqcjh2BZbPa2sRhCEllWgKtQiagtBDBUEQSACqcvR1lbaikWPQKkWgUAILmEpYER2TEICIclk%2Bgfr5M0kM%2B/dt97v55z7B5N5990773ff79438x4KHMaf8GrQ7jaQeaouPK7Y3YZr2doYlcFOAAI2DgrLd6wmMugpskC5tYPBsp0x8CkWVg0E03ei1lvGwCfdAufHmhqjplXOwCeRzBoIwitV6zPwyTyBc2IHgtDK1CQGP5kvUCZuEAipSE1azsAnywXKxhiOX8MVqA0Y/GSfQKmxQeAzsjGDn%2BxmNAZ1jx614WsMfnKMwNnHdMWyrgzA4Cen0RuTMY8aNZnBT84VKIktE8T0ZjWFwU/OFyiOfhBE/UY1ZQWDn1wjUDw6qtiO6k1qIwY/uU%2BgqO5BUOcimMFPbhVN7PrrrEVx1A08RELVGt1qk5U8%2B5PrBc6MihjnEadADH7yitpiOfIUiDMfkkDYMFebruLZnzwncPpRTbyHzwA8%2B5MkNGsANZVnf/KmcLGtzQC87EkSCYl29bpsnv3J8wInMq7EvaEbYojc7spIUJvz7E/yCBy/mAWuWQNw7k/yuToAGP8kIQUA1Bavc/pD0gkcfUS5lAF4%2Bic5XRwAjH%2BSFC%2BDktSYAUhqitpqDRfAJC0/z/4kMw4AkpqfCwCSGTMASY2XQUlqzAAkNa4BSGrMACQ1DgCSGqdAJDVmAJKanz8EIpkxA5DU/HwQFsmM3wST1DgFIqkxA5DUuAYgqTEDkNS4BiCpcQpEUuMUiKTGKRBJjRmApMY1AEmNUyCSGqdAJDVOgUhq4f%2BneAdr1DAOpz8dbHczTJG56ms8lZVvdzOk4r41gNvaGyuv989huAYgqblvDeC29sZE8Xj/nIdTICdR4O3%2BOZDrFsFFZyuhdn834t/v6JGKTdl3667/jX9%2Bg%2BFPf657%2B2hcn5qIIx/db%2Bo%2BKDrumwLVRUR/TP9Maqnfa8fD4bgIJqm5bw1gBbsSANcAlvPeADDaHyuCsLb6vXY8HI4Px9WwcwQwBViNGcCsOvTUz/i3HBfBJDVeBtVsL6COOvfBy6BO4bovwrzg2OlyqL3fs7sZBK4BzKuDXMF7A0AEfibS8OBlUHengKVPdseYB9pasq%2BkO9ehvCJw5d9d2iUj743%2BhurM21eM9GGfGG2aZbyXAWz%2BIix37T3o1j4l5LW8fcVIH%2B7AoKjZV1Gx4KKY4mVQkhovg2orMOdSZLR1Wnk4NJd8Be3cRTHFDEBS4xpAdB3hto1hXTEuMw/jMvNCXhs2sA1WP5Ouu0ml56uQPmIjDhwpC9%2B2S/YcLIHa728hf%2B7aLhlbV92FhLjQc%2BV7G4/iwUg3DrkopnxXDo5XilFm7d9AnTkfFuLtj47o7lKDen6smd0Tfr8S034T4n3IebanJvi/O1WOMfN22X%2BsBRSf7S0QXkQQ3Qbj/Ro3fzcOHzuvu0d9OzfGrIyOMe1z7vjO6HJTckg9wSDwyPM7caakUki/7C7eywDh4i9WZuzbYJ%2BKyyoxYs4OBKqDurv19MgO6JfWJKr9/ahPM0x46CZNHVlvH8DH20/af4wFFf4WqIYhA1pjyIDWdjcjrC27z2Du2n2YObKDru1Vn4I1z6Sjx8iNOHuuKuL7mqbEI3tmD83FnLz9JZi17Ctd%2B3YqHxQFnitOJKhvc7L3YuuX3%2Btuxo0t6mPR1LRa97FsRje0TE0M2a68ohrD5%2BTiQlXQ/uMrsHAKZBVBfauqDmL4cztRej7yGbwuwwe2xkP9W4atP%2BP%2BG/DAXS0028xY8iW%2BOHTW/mMruPB7ABc6cKQMExfuMVTH0mlpaHNdvZDX2rVKwsKJnTXv/XDrCbzyl4OG9udU3ssATiW4n6vXF%2BKdT77T3ZzGDeOwelYP%2BFQFUABVVbDmtz3QoF7osvBkUQUy/rDL/uNqUvEHHR01sTPanz9tOILhz%2B/Uvf3OlT9Et5uTNa%2Bb8TmPfTEffTs31pzJo3VX96Z44hftkPnmAcwc2QF9f9BY857R8/Jw7PsKOPvsoh%2B/CRZdR7htTcpORWWVGPHCLnyc1Rc%2Bn74dzBnVEaXlAcwa0V7zt1ffP4x1nx33auwD4BrA9Tblnca8Nw/o3j4%2BzofFk7tArTGACgpLMW3Jl0ab53jeWwMYPVuZtW8T%2Bzv79QJsLyg22PGrKquCGPrcTpy7ELD/WJpc%2BHNos%2Bqwos5LKgPA0Bd2Inf5nUhKVA3X90x2AXL3l5jaZqfgFMgj9n1bhsmLvzBcz8ZdpzH/rf8JaJE7eG8KZJRZ%2B7eg7ys/KMSfNx/T3fVAdRAZmXmoRtD%2B42hR4a9BNczavzX9H/tSPr49Wa6r56pPwcP9W1nWVicUXgYVXEePsVuE1xmLM6WVmL16L1ZMS9O1/bOPdMCG3FPYsbdYcMucyXtTIFEDwKUlMcGHKQ9qf8YcrTi/gpynuqN%2Bomp7X6woXAR7zNzRndC5bQNDdXRsk4QFj98iqEXOxsugmu0F1GGTAT1TMWFwWyF1jb3/Bnyw7STe/%2ByEkPqcihnAI5omxyF7eprQsbtialdc3yRBXIUOxDVAOHa3X0dZNqUrWtQI1mAQ2Jx/RvfHkJoSj1XTukLx2d8/s4oHL4MqkY5nDOxuf2zl0fva4Ge3N9f04uW/HsagmTtQ8G2Yx6FEaWCvZpjw07a299Gs4r0MIILdfYih3NSyPrLGddJ0If/QWTy5qgDnKgIYNi8PlVX6b6afO6ojutzYwPa%2BmlG8NwCUyAcyKna3PYaiqgrWzkhDwxo3sZRXVGPovDxcqKoGFGDH/hL8bu0%2B3R9JYrwPOb/phoR4700YuAh2sZm/bIfbbmmkef3JVQXYc6g05LXMdw5ik4H1QNqNDfH7DH1Po3AyPhVCwwHtj6L06dQIs4a007R%2B/Y5TWLTuG837qwGMeDEfRWX6b6afPLgt7k1Ptb3vIgszgAslJapYOz0NfjV0sJ8srkDGgnwEI0z3C0%2BWY/xi/Te5KArw%2BhNd0TQ5TncdTsM1QDh2t7%2BO8tKYTmjfsr6m2aMW7sHx4opat31r81HkGLiZvkWTBCyf1Nn2z0BU8d6qRgi7%2BxC5/OTW6/DYQO2T65b8oxB///xUVHX8esnXOHRc/3NGH7itOUbf19r2z0JE8V4GMMru9tdSmjeOx2uTtM/t%2BaqwDNNXFkRdT8n5KoxYkG/oOaNZYzqhfav6tn8mRov3BoBSx5GLht3tj1BWTu6CZinxIU2tqKrGkPm7cb6yOqa6tnxVhLnv6n/YVVKiipzpXWN%2B5LrTChfBLjF%2BUBsM6pWqeX3mmv3IO3hWV53PvnEA2/YV625T7/YpmD3kZt3bO4Gi/Phf%2BvOgDRol%2BXHmzXvsbgYGzc7F%2BtzTwuutfv9ew3VcqKxGvZ9/HPJaanIcTuTcbbjuaL3972N4eH6%2BZfvTixmApOa%2BWyKd0l5R6w2z1Gyb1W11%2BudziftuiHFKe4V862yimm2zvK0O/3wu4RSIpKYogze4ahFMJBIzAEnNfWsAIoGYAUhq7rsMSiQQp0AkNU6BSGqcApHUmAFIalwDkNQ4BSKpcQpEUuMUiKTGDEBS4xqApMYMQFLjGoCkxikQSc3P28FIZswAJDW/K55dQWQSZgCSGgcASY1TIJIaMwBJjd8Ek9SYAUhqXAOQ1JgBSGocACS1i%2BGfsYU/CSL5ZN%2Bh%2BAFwGUDS4mVQkhozAEnt4gDgCCBJXY380f/hQpjkseJ2BbiSAcAkQFK6OgA4AkhCoVE/5lNOg8j7lve7Eve8DEpS0857xjILkIct6xcS837NG/igLJKIdgr06m0cAeRNYWJbmwEAXhAiaUQO9XH/5VqAvGNp37CxHj4DAMwCJIXIl0GXhB8xRK5TSyzXHeS/4lSIXOyV2k/kkadAl/GyKHlY3d8EL76VI4DcKYrYjT64J2zlVIjcY1F0J%2B7Yzu4TPucgIOdb1CfquI59ejORg4Ac7OXogx/Qe7V/EgcBOdAfYwt%2BQO/PoXXsiMhUOmPSWCBP3sZMQPZb2Ft3HBu7IcbAjomEMBiDYgJ4CjMB2SDL%2BAlY7Bl8ynYOBDJfVi9hcSt%2BCjOVg4BM9JK44AfM/NHzExwIJNACsYF/mfmLWA4EMsKkwL/Muqs403ZwIFD0XuxpSWxafxmTA4FqY1HgX2bvdfzpHAwEYL61QX8t532RNSOXg8LLMtMdFXP/B6lYj5S1j2fNAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22192x192%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAgB0lEQVR4nO3debhWZbkw8HvvdwMCCigCkvOIE%2BBYZpnX6aTNp%2Bk7X4NiToVDqEccG6xMLWc9aqYFIVCnr6/P0%2BgxS786pWmaqIg55oRKoIAyCmz2%2BaNQSdi%2Be%2B33fdfw/H7Xtf4Q99rv/T5rwX2v%2B3nWWm1BIXX0%2B1ZX3jEANMKql49pyzsGXs9ByUlNggeIiIhOBUIuDHoLSPYAPaMoaD4D3AQSPkBjKQgaz4A2gIQP0FoKgt4zgBnVNpD0AYqgc7liIAuD1gOSPkCxKQbqZ6DegKQPUE6Kge4ZnPWQ%2BAGqQSGwbgblNSR9gGpTDLzKQERErf81Ej9AQjqXjU8%2B/yU9ABI/QNpSLgSS/OISPwCvlWIhkNQXlvgB6E5KhUASX7Q2QOIHoH6dS6tfCLTnHUCzSf4A9FQKuaOyFU4KBw%2BA5qtqN6ByX0riB6AZqlYIVGoKQPIHoFmqlmMqUc3UBl5bqYMCQLF1Lvls6fNn6TsAkj8ArVaF3FPqAqAKBwCAcip7DiplC6Psgw5AtZRxSqB0HQDJH4CiKWNuKlXFUtuwfAMMQDo6F5enE1CKQCV%2BAMqkDIVA4acAJH8AyqYMuavQBUAZBhAA1qXoOaywLYraRsUeOACoR%2BeiYk4HFDKo2kbflvwBqIzORZ8pXL4t3BSA5A9A1RQxtxWqACjiAAFAIxQtxxWmACjawABAoxUp1xViTqI2qDgDAgDN1vlS/msCcu8ASP4ApKYIuS/XAqAIAwAAecg7B%2BZWAOT9xQEgb3nmwlzmIGqDJX8AWKPzxdavCWj5B9YGf0fyB4B/0Pni0S3NyS2dApD8AWDdWp0jW1YASP4A0L1W5sqWFACSPwDUp1U5s6MVH1KMxw0BAGs0vQNQG%2BLqHwB6ohW5s6kFgOQPANk0O4c2rQCQ/AGgd5qZS3N/FwAA0HpNWZ5X29jVPwA0SueCxj8kqOG/sLbxJMkfABqsc8FRDc3ZDZ0CkPwBoDkanWOtAQCABDWsnVDbxNU/ADRb5/zGTAU0pAMg%2BQNAazQq55oCAIAE9boAcPUPAK3ViNyrAwAACerVQoLaUFf/AJCXzheyLwjMvGNt6GTJHwBy1vnCkZlyuSkAAEhQpgLA1T8AFEPWnNyR6dOa8gohAKBVetwBqG3q6h8AiiRLbrYGAAAS1KMCwNU/ABRTT3O0DgAAJKju5Xy1Ya7%2BAaDoOufV91wAHQAASFBdVUJt2Hdd/QNASXTOO%2BIN87sOAAAkSAEAAAl6wxZBbbj2PwCUTefc7qcBdAAAIEHdFgCu/gGgnN4oh%2BsAAECCun8boLf%2BAUAlrbcDUBuh/Q8AZdZdLu%2BmA%2BDyHwCqyhoAAEjQOguA2ogp2v8AUAHry%2BnrngLQ/QeASjMFAAAJel0BUNtM%2Bx8AqmRduV0HAAAS9Po1AOb/AaDydAAAIEFrFQC1keb/AaCK/jHH/8MUgP4/AKTAFAAAJGjtDoAGAAAk4ZUOQO1N15n/B4AKe22uNwUAAAlSAABAghQAAJCgVxcBWgAIAMloj4iobW4BIACkYE3O/3sHwOU/AKTEGgAASNDfOgAaAACQFB0AAEiQAgAAEqQAAIAEKQAAIEFttS2negYAACRGBwAAEqQAAIAEdXgIAACkp0P%2BB4D0mAIAgAQpAAAgQQoAAEiQAgAAEmQRIAAkSAcAABKkAACABHkQEAAkSAcAABJkESAAJEgHAAASpAAAgAQpAAAgQdYAAECCdAAAIEEKAABIkAIAABLkSYAAkCCLAAEgQaYAACBBCgAASFBHV94RAAAtZw0AACTIFAAAJEgBAAAJUgAAQII8CAgAEmQRIAAkyBQAACRIAQAACVIAAECCFAAAkCCLAAEgQToAAJAgBQAAJMiDgAAgQdYAAECCTAEAQIIUAACQIAUAACRIAQAACbIIEAASpAMAAAlSAABAghQAAJCgjmizCAAAUqMDAAAJUgAAQIIUAACQIAUAACTIg4AAIEE6AACQIAUAACRIAQAACeoIiwAAIDkWAQJAgkwBAECCFAAAkCAFAAAkyBoAAEiQDgAAJEgBAAAJUgAAQIIUAACQoI5oswoQAFKjAwAACVIAAECCOvIOgOaYePiouGDimLzDoOTuuG9%2B7H/IzXmHATSBBwFVleNKI7SFcwkqyhQAACRIAQAACVIAAECCFAAAkCAPAgK6598IqCQdAABIkAIAABKkAACABCkAACBBngRYVY4rjeJcgkrSAQCABLW1j/2/XXkHQTmcfuTOcd4Ju%2BcdBi10x8z5sf%2B4W/IOA2gCHQAASJA1AFTS4Lf9OBYvXZV3GIXw7v03ixuuenv2X%2BDfCKikDn%2B7qSbvsW0c4whVZAoAABKkAACABCkAACBBFgFSvzKdK5YAvKo342AcobJ0AAAgQQoAAEiQAgAAEmQNANVk7vpVvR0H4wiV5EFA9ECZzhUVwKtUAMDrmQIAgAQpAAAgQQoAAEiQRYDUr0zniiUAr7IEAFgHHQAASJACAAASpAAAgAQpAAAgQRYBUr8ynSsWATaOcYRK8iRAKkoF8CrvAwZezxQAACRIAQAACbIGgGrSuX6VBwEB69CRdwBAc/3yD3%2BN2pv/M%2B8wgIIxBQAACVIAAECCFAAAkCCLAKlf2c6VssUL0EIeBEQPlOlccRsAQHdMAQBAghQAAJAgawCophLMAHzowJFx/flvybTvLXfOi4Mm3NrgiOrz7A3vjRGb9Mvls4vuuAvujWuuf7xH%2B9xy9dvjwD03bVJEzZHn%2BUfj6AAAQIIUAACQIAUAACRIAQAACbIIkPqV6VwpwSLAXqn69yuzFI6L868SdAAAIEGeBEhFleESpbfxFf37pSqV45LK96wuHQAASJACAAASZBEg1WQGgDyU4bxrlFS%2BZ4XpAABAghQAAJCgjrwDAMrlTR%2B4scf7nHHYjnHuMbs2IZrm%2BNb1j8fxF93Xks965/HZXqrz84v3i/e%2BdUSmfR9%2BanHsc8RvYsmyzkz7Uw3WAFC/Mp0rZZiLTWgNwAXfezQOfsvw0rz17piPbhs33D43fnHrnLxDWafjPrZt5uS/ctXqGPfVP8WS5Z2lOodoPFMAQNOtXt0Vnz777liwaGXeodRt0uf3KORrj3fZZqO44PjdMu//1UkPxV0PLmxcQJRW%2B6uXSjZbPVtZ5D1OzR7LvGPv%2Bfb03OVxzAX39vJ7t86wIf1i8hf2irzH7bVb3z61mPblvaN/v1qm7/S7e1%2BI86c/mvv3sBVj0wEAWuZHtzwb193wdN5h1O09%2Bw2P4z%2B2bd5hvOLsz%2Bwce%2B40ONO%2BLy5eGZ8%2B%2B%2B5YvbqrwVFRVgoAoKVOuGRmPDp7Sd5h1O2Cz%2B0Wu26zUd5hxIF7bhoTP7l95v2Pu%2Bi%2BeHLOsgZGRNm1F6ALYSvLViZ5j1WzxzPv2HuxLV6%2BKsadfXes6izHlegGfdtj%2Blf3jr5985sxHbJRn7jurD2jvT3bifP9m2bHD379TO7H3lasTQcAaLk/PrAgvjr5obzDqNvYHQbFeeN3ye3zv3nKmNhyeP9M%2Bz45Z1kcf3FrbmmkXDwHgEp68VfvyzsE3sA3pj0SB795WBwwdmjeodTlpI9vH/91%2B9y4%2Ba55Lf3cQ969RXz8XZtn2rdzdVccdvaf4qUlqxocFVWgAwDkYvXqrjjs7Ltj4eJy3BrY1hYx5Yt7xiaD%2BrbsM7ferH9cefKYzPt/Y9oj8fv75jcwIqrEGgBbzzaKI%2B9zoQHbU3OXxbEteuJeI7xp0w3i2tPHtmRs2mttcd2X9opBA7M1av/45wVx9ncfyv0Y24q76QAAufrhzc/EtBvLc2vgRw4cGUd%2BYKumf87ph%2ByQeXpkyfLOUi20JB8KACB3Ey6dGX95dmneYdTtshNHxw5bDGza79971JD48pGjMu9/0uXlutWSfHgSoK0HG8WS9/nQuG3R0nJdsQ7coBbTzto7Omrt0eixGLBBR0w7a6/o05Ht%2Buw/f/tcTP750w2Py1a9TQcAKITbZy2Ir015OO8w6vbmXYbEWUdkv0pfn4s/t1uM2mrDTPs%2B%2B/zyGH9hedZUkC9vA4SyquDf3a9PeyQO2ndYvH3MJnmHUpczxu0QN905t2Er7T/wthHx2Q9tnWnfrq6II867J154aUUlzw0aTwcAKIzO1V1x2Dl3x4tLynFrYK29La774p6ZV%2Bq/1oiN%2B8V3Tt8j8/6X/fAv8esWP6OAclMAAIXy5JxlcdzFM/MOo27bbDYgrurFvfprTDpzjxg2JNszBu577KX4wrV/7nUMpEUBABTOD379THzvptl5h1G3Tx20eXwi49P6IiKO%2B8g28d79hmfad/mK1XHo2XfHyytXZ/580qQAAArpc5fOjMefK8%2Btgd%2BcODq2GtHz5/XvvNWGccFxu2b%2B3NOvfiBmPb4o8/6ky5MAbT3bKI68z4Umby8tXRXjvnZ3dJbk/fWDB/aJ6764Z7TX2ur%2Bjn36tMf0L%2B8V/fvVMn3mL/84N668/vHcj5WtnJsOAFBYf5i1IM65rjy3Br5j7NA4/VM71P3zXzt6VOy54%2BBMnzVv4Yo44rx7Mu0LEREdXdGWdwyUhnOlKLoiIpW/u%2BdMfTQO2nd47L/7xnmHUpcvHzEqbrpzXtz10Ivd/tyBewyNiR/fPvPnHH3%2BvTFnwYrw95KsvA6YShr0nhtj8bJivwL1wwdsFtefs0/eYRRe5%2BquGHfOjJgx6R0Nud2u2fp0tMX0L%2B0Vex/937Fkeec6f2bIhn3ius/vEe3t2ZL3t37yZPzstr/2JkywBsDWg61M8h6rZo9n3rG3eHt8ztL43GXluTVwpy0HxiUTdlvv97nq5N0zLRiMiHjo6cVxytUP5H5MbOXfrAEASmH6r56J7//6mbzDqNtnPrBVfPjtm73uzw89aPP45D9nu2Vw5aquOORrM2LpejoL0BMKAKA0jr90Zjwxpzy3Bn77tDExcmi/V/576xH944qTRmf%2BfWdNfjDufvjFRoQGCgCgPF5csirGnXNPaW4NHDqob3z3jD2irS2ivb0tpn5hzxiccR3Db%2B55IS78wV8aHCEpUwAApXLr/fPj3GmP5B1G3Q7ed1ic%2BLFt44xPbR8HZHzJ0cLFK%2BPT590Tq0tS%2BFAO3gZI/cp0rqxZ6FJkvY2v6N%2Bvic6Z9kgcvO%2Bw2G/XjfMOpS5fH79LtLdlP2DHXDwznp63LOljTuPpAACls6qzKw49Z0YsWlrsWz3X6NenPfp0ZMveU2%2BaHT/8zbMNjggiOpSUVJMWQNX95bllMeHyWTHlzLF5h9I0jz%2B3NCZcPitSP9Y0hw4AUFpTb5odP7ilmlfHnau7Yty595Smy0H5KACAUjv2kpnx1NxleYfRcOdMezRum7Ug7zCoMIsAqSYzAMl4cemqGHfuPfH/L9uvVwvtiuT2BxbGudMfcYxpKh0AoPR%2BN3N%2BfP17j%2BUdRkMsXrYqxp03I1Z1uuWP5lIAAJXw1esejjv%2BvDDvMHrthCtmxWPPludph5SXAgCohFWdXXHouTMK/xbI7vzot8/FlBtn5x0GibAGgPqV6VwpwxqA3qr698vgseeWxglXzIrJp5Xv1sDZ85bH%2BEtnOq60jA4AUClTfjk7fvib5/IOo0e6uiIOP/%2BeWLBoZd6hkBAFAFA5x1z690fnlsRFP/xL3DLjhbzDIDGeBEgPlO1cKVu8PZHCHEd2CxevisO%2Bfm/cfPFbCn9r4D2PvhRfmvxwOJ60mg4AUEm/vXd%2BnP8fxX997srOrljd5ZY/Ws8iQKqpDBfIvYmvDN%2BvAL4y9eF4196bxr6jBucdynrtO2pwfOXwneKLkx/KOxQS05F3AJCqH9/612h/1w15h1FpK1d1xSHnzYgZ1xwQAzeo5R3Oep3xye3il3fOi9/NnJ93KCTEFABQaY8%2BszROvHJW3mF0q72tLaaeMTYGD3RNRusoAIDKm3zj7PjRf8/JO4xubT2if1x14u55h0FCrAGgfmU6V8yR8w%2B6ovgL7T71zjfFDXfMje9X9BXHFIsOAFB5nz54i/jXd4zMO4y6XHXC7rH1iP55h0ECFABApW0zon9cfvyueYdRt8EDO2Lq6WML//wCys%2BDgKgocwBE1NrbYuoZe8SgAeVaXHfA6E3izE9uH%2Bd%2BvxqvOKaYdACAyjrzk9vF23ffOO8wMvnyYTsW%2BvkFlJ9FgNSvTOeKBkDy9tlpcHzp0B3zDiOzjlpbTD9zbOx17K2xZHln3uFQQToAQOUM6FeL6WeMjT4d5a4Cd9x8YFx67C55h0FFKQCAyrn4mF1ipy0G5h1GQxz93i3jw/uPyDsMKkgBAFTKB94yPMa/f8u8w2iob588OkZu0i/vMKgYBQBQGcOH9I3vTByddxgNN3RQn5hy2phwZyCNZBEg1WQRYJImnTImhg/pm3cYTXHQXpvGSR/dJi69/om8Q6EidACASjjug1vF%2B988LO8wmuq8I0fFmG03yjsMKkIBAJTeqC0GxgWf2TnvMJquX5/2mH7G2Nigr3%2B66b32V3ulNls9W1nkPU62Vm19Otpj%2Bhl7xIB%2Btchi2cud8b/OnhHLXi7Hvfa7b7NRfOOonSPvcbeVf7MGgPqV6VxZc45TeV85bMfYe8dBmfefeO2Dcf1tf42R33korijJOwMmfGjruPGueXHjXc/nHQolpo8ElNYBu28cp//vbTPv/7Pb58a3fvF0RERc9bOn4hd/nNeo0JqqrS1i8sTRsemgai54pDUUAEApDRrQEVNPG5P5rXlzFrwcR11y/1p/dtQlM2PuwhWNCK/pNtu4X3zn5N3zDoMSUwAApXTl53aNrYf3z7RvV1fEERfNjOdfWjvZz124Io66ZGYjwmuJf9lveIx/X7UeekTrKACA0vn4gSPj0He%2BKfP%2Bl//4ifjln9Y9f/6LP86Lq3/%2BVObf3WoXj985RlXksce0lkWAVJNFgJW1xaYbxDcnZF%2BsN/OJRXHmdx/u9vw45dsPxT%2BNHRo7b1n8xDqgXy2mnz429j/5D7FyVVfe4VAiOgBAabS1RUw5ZXRsvGGfTPsvX7E6PvWNe%2BPllau7/bllKzrjkPPvjRWruv%2B5oth7x0Hx1XHlffUx%2BVAAAKUx8aPbxjvHDs28/2mTHoxZTy6u62dnPPZSnDX1kcyf1Wqn/eu2ceDoTfIOgxLp0CelmswBVM3Y7TaKcw7PfpV7w53z4sqfPh09OS8u%2BtGT8e69h8U/jS1%2BYm1va4upp46JscfeGguXrMo7HEqgvQAPI7KVaSuLvMfJ1tBtg37tMf20MdG3I1vTcu7CFXHkpff3%2BHNXR1d8%2BuKZsWDxykyf22pbDvv7%2BogCHDNb8TdTAEDhfeOInWK3rTfMvP9Rl92f%2Bf7%2B2c8vj2OveCDzZ7faJw4cGeN6cYcE6VAAAIV28F5DY8K/bJ15/ysb8IS/H/5uTky9%2Bdle/Y5WuuK4XWKbEdmekUA6FABAYQ0d1Ce%2Be/LoyPiwv5j15OI4bdJDDYllwjf/HI/PWdaQ39VsgwZ0xLRTx0StPePAkQQFAFBY10zYLUZu0i/Tvi%2BvXB2HXHBfLF/RmFv5Fi1bFeMuvC86V5fjXvu37TokPv/x7fIOgwLzICCqac1CF0rryIM3j4%2B%2BbUTm/T8/5eG474lFDT0PbntwYZz7f/4SZ31y%2B8b90ib60qe2j5tmPB93PPRi3qFQQDoAQOFsP3JAXPbZXTLvf9PdL8RlP3mygRG96pz/eKw0CbWj1hbTTx0TG/av5R0KBaQAAAql1t4WU08ZnTlpPf/Sijji0pnR1aRO/arOrjj0wvti8bLO5nxAg20/ckBcPj57MUV1KQCAQvniJ7aLt%2B48JPP%2BR182K56b/3LjAlqHx55bGidd%2B%2BemfkYjHXHQ5vGxXkynUE2eBEgPlOlcsQigjN4yanB84RPZ59e/dcPT8dM75kUrjv3km56N9%2B4zrDSJ9ZoJu8XtD74Yz7zQ3OKI8rAIkPqV7VwpW7yJG7hBLaadOjo6atkO3IOzl8Qpk7p/y1%2Bjjb/ygdhv5yGx%2BdBsdyq00iYb9YkpE0fHwV%2B8q2nTI5SLKQCgEC777M6xw8gBmfZdsWp1HHLhfbH05dbOy89ftDIOv6R56w0a7Z/HbhInf3ibvMOgIBQAQO4%2BvN/wOOrgzTPv/6Vpj8aMxxY1MKL63Xzv/Li0SXccNMO5n94hxm67Ud5hUAAKACBXm23cL649YbfM%2B9987/y46PonGhdQBp%2Bf8kjc%2B3g%2BBUhP9e1oj%2B%2BdOjr69/XPf%2Bq8DdBW/1YmeY%2BVre5t8km7xaaD%2BqzvSHZr/qKVcfilM6Mr8v0OKzpXx6EXzWzYUwebbdetNowLjhqV%2B7G35bspAYHcTPjgVvGevTfNvP9nr3ygMKvaZz21OE6f8nDeYdTt%2BPdvGe/bJ/vYU34KACAXu2w5ML5x%2BE6Z95/0q2fi%2Btv%2B2sCIeu%2BKnz0V//Wn5/MOo26TTtw9hg/um3cY5EQBALRc3472mH7KmMzz0I88uzROuvbBBkfVGEdedn/Me3FF3mHUZcSQvjHpxOzrLyi39twnIWwl2sok77Gydbd9bdwOsed22Vair1zVFYdcNDOWLF%2Bd%2B/dY1/bXhSvj6H9/INN3y8P79x0Wx71vq8h73Gyt3zwIiPqV6VxZc45TOAfuvnFM/MjWmff/yvcfi7sefanQx/dnd86La26cHePfs0XeodTlwqN2iltmzo8HZy/JOxRayBQA0DKDB3TEdf%2B2e7S3Zcvev71/QZz//55obFBNMnHSw/HQM%2BVIqP37tsf3ThkdfTukhJS0tX3wppI8w4qeOOUjW8cFR2RfYMUbe2zOstjxs7/PO4yWWv3Tg/IOoVe2O/r38cTcZT3a5%2BrjdinNlXyefnLHvPjIuffkHQY9oNwDgARZA1BVjmtrGOdyybI2xDGun7EqFR0AAEiQAgAAEqQAAIAEKQAAIEEdkfF%2BXIrOcW0Jf3/Kpa0twzFzjOvm70Op6AAAQIIUAACQIAUAACRIAQAACfIkwKpyXFvDOJeLt0Q2j7Etnba2D//Ky4AAIDGmAAAgQQoAAEiQBwEBQIJ0AAAgQQoAAEiQAgAAEqQAAIAEeRAQACRIBwAAEqQAAIAEKQAAIEHWAABAgjq8vgkA0mMKAAASpAAAgAQpAAAgQRYBAkCCdAAAIEEKAABIkAIAABKkAACABHVEm1WAAJAaHQAASJACAAASpAAAgAR5EBAAJEgHAAASpAAAgAQpAAAgQQoAAEiQRYAAkKCOUAEAQHJMAQBAghQAAJAgawAAIEE6AACQIAUAACRIAQAACVIAAECCLAIEgAR5EBAAJMgUAAAkSAEAAAlSAABAgiwCBIAEdXTlHQEA0HKmAAAgQQoAAEiQNQAAkCAPAgKABJkCAIAEKQAAIEEKAABIkEWAAJAgHQAASJACAAASpAAAgARZAwAACdIBAIAEeRIgACRIBwAAEqQAAIAEWQQIAAnSAQCABCkAACBBCgAASJACAAASZBEgACTIg4AAIEGmAAAgQQoAAEjQ3/r/h/%2BuK%2Bc4AIBWmXJAmw4AACRIAQAACVIAAECCFAAAkKCOiPAoAABIjA4AACTobx0ALQAASMrfOgDffbsKAABS8Pec3/HKHygBACAZ1gAAQIIUAACQIAUAACTo1QJgsoWAAFBpr8n1HWv9DyUAACTBFAAAJGjtDoAWAAAkYe0OwKS3qQAAoIr%2BIcebAgCABHW87k/0AACg8nQAACBBry8AvmMdAABUyjpyuw4AACTo9WsAIqwDAICKW3cH4NumAQCgEtaT000BAECC1j0FEBHmAQCgutbfAfj2/ioAACizbnJ5Nx2A0AQAgIqyBgAAEtR9AXCtaQAAKKU3yOE6AACQoPqu8Mff1tXkOACARrnmjTv4OgAAkCAFAAAkqP5FfuP/YBoAAIrumrfWldt1AAAgQT27ze8YXQAAKKxv1Xf1H6EDAABJ6lkB0IPKAgBooR7maB0AAEhQzwsAXQAAKJYMubn7twGujxIAAEot2xTA1boAAFAIGXOyNQAAkKDeXckfe7vnAgBAXq7eL3Me730r/zhFAAC03DezJ/8IUwAAkKTeFwC9rEAAgB5qQO7VAQCABDWmANAFAIDWaFDObWziPt6CQABomqsad8FtCgAAEtTYAqCBlQkA8BoNzrHNSdjH32EqAAAa5aq3NDxfN%2B%2BK/XOKAADotSsbn/wjrAEAgCQ1rwBoUsUCAMloYi5tbgdAEQAA2TQ5hzZ/CkARAAA904Lc2dHsD4iIZi41BAAyaM0iwCt0AQCgLi3Kma27C0ARAADda2GubO1tgIoAAFi3FufIfBLyhD96SBAArHHFm1uej/O7Ij9BEQAA8e%2BtT/4ReT4JMKcvDACFkWMuzPdRwIoAAFKVcw7M/10AigAAUlOA3Jd7AK840ZoAABJwef7JP6IIHYA1CjIgANA0Bcp1xSkAIgo1MADQUAXLccUqACIKN0AA0GsFzG2FC%2BgVJ95pTQAA5Xf5voXMtYUM6hUnKQIAKLHLipn8I4o4BfBaBR44AOhWwXNYsQuAiMIPIAC8TglyV%2BEDXIspAQCKrASJf43SBPqKf1MEAFBAl5Yn%2BUeUYQrgH5VsgAFIQAlzU%2BkCXotuAAB5KmHiX6N8HYDXKvHAA1ByJc9B5S4AIkp/AAAooQrkntJ/gbWcfJcpAQCa55J9KpM3y98BeK0KHRgACqZiOaZSX2YtugEANELFEv8alfxSa1EIAJBFRRP/GtWaAliXih9AAJoggdxR%2BS%2B4lom6AQB04%2BLqJ/41kvmia1EIAPBaCSX%2BNZL7wmtRCACkLcHEv0ayX3wtCgGAtCSc%2BNdIfgDWcsqfFAIAVXbR3vLe3xmI9VEMAFSDpL9OBuWNKAQAykni75bB6QnFAECxSfp1M1BZKQYAikHSz8SgNcKpigGAlrpQ0u8tA9gMCgKAxpLwG86AtoKCAKBnJPymM8B5URQA/I1knwuDXlSn3a1AAKrhgr3kmgL6HyVHIjIhpZZcAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%22%7D%5D%7D">
+<meta name="theme-color" content="#041273">
+<link rel="icon" href="data:image/png;base64,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" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rota da Independência">
+
+<style>
+:root{
+  --azul-fenix:#041273;
+  --azul-thauane:#040798;
+  --dell-azul:#0076CE;
+  --amarelo:#ffcb00;
+  --bg:#F3F4F9;
+  --ink:#020733;
+  --ink-soft:#4A4F6B;
+  --linha:#DADCE8;
+  --card:#FFFFFF;
+  --projetado:#9E8A06;
+  --projetado-fraco:#736504;
+  --indigo:#0621A1;
+  --negativo:#A32A2A;
+  --positivo:#1B6E3C;
+  --alerta-bg:#FFF6DC;
+  --radius:14px;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit;}
+html,body{height:100%;}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.num-display{font-family:var(--serif); font-weight:600; margin:0;}
+h1{font-size:1.5rem; color:var(--azul-fenix);}
+h2{font-size:1.15rem; color:var(--azul-fenix); margin-bottom:.6rem;}
+h3{font-size:1rem; color:var(--ink); margin-bottom:.4rem;}
+p{line-height:1.55; margin:.3rem 0;}
+small{color:var(--ink-soft);}
+button{font-family:var(--sans); cursor:pointer;}
+input,select{font-family:var(--sans); font-size:1rem;}
+.hidden{display:none !important;}
+
+/* ---- topo ---- */
+header.app-top{
+  background:linear-gradient(120deg,var(--azul-thauane),var(--dell-azul));
+  color:#fff; padding:.85rem 1rem; display:flex; align-items:center; gap:.6rem;
+  position:sticky; top:0; z-index:20;
+  padding-top:calc(.85rem + env(safe-area-inset-top,0px));
+}
+header.app-top .mark{
+  width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-family:var(--serif);
+  flex-shrink:0;
+}
+header.app-top .title{flex:1; min-width:0;}
+header.app-top .title b{font-family:var(--serif); font-size:1.05rem; display:block;}
+header.app-top .title span{font-size:.72rem; opacity:.85;}
+header.app-top .ver{font-size:.7rem; opacity:.85; white-space:nowrap;}
+.header-right{display:flex; flex-direction:column; align-items:flex-end; gap:.15rem; flex-shrink:0;}
+.sync-badge{font-size:.62rem; opacity:.9; white-space:nowrap;}
+.sync-badge.pending{opacity:.7;}
+.sync-badge.erro{color:var(--amarelo); font-weight:700;}
+
+/* ---- layout geral ---- */
+.app-shell{display:flex; min-height:calc(100vh - 58px);}
+main{flex:1; min-width:0; padding:1rem 1rem 5.5rem; max-width:920px; margin:0 auto; width:100%;}
+.view{display:none;}
+.view.active{display:block; animation:fadein .18s ease;}
+@keyframes fadein{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;}}
+
+/* ---- navegação ---- */
+nav.tabbar{
+  position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid var(--linha);
+  display:flex; z-index:30; padding-bottom:env(safe-area-inset-bottom,0px);
+}
+nav.tabbar button{
+  flex:1; background:none; border:none; padding:.5rem .2rem .6rem; font-size:.68rem; color:var(--ink-soft);
+  display:flex; flex-direction:column; align-items:center; gap:.15rem;
+}
+nav.tabbar button .ico{font-size:1.05rem;}
+nav.tabbar button.active{color:var(--dell-azul); font-weight:600;}
+nav.tabbar button.locked{opacity:.35;}
+
+@media(min-width:900px){
+  nav.tabbar{
+    position:sticky; top:58px; left:0; bottom:auto; width:220px; height:calc(100vh - 58px);
+    flex-direction:column; border-top:none; border-right:1px solid var(--linha);
+    padding:.75rem .5rem; align-items:stretch; gap:.1rem;
+  }
+  nav.tabbar button{flex-direction:row; justify-content:flex-start; gap:.6rem; padding:.6rem .7rem; border-radius:10px; font-size:.85rem;}
+  nav.tabbar button.active{background:var(--bg);}
+  main{padding-bottom:1rem;}
+}
+
+/* ---- cards ---- */
+.grid-cards{display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; margin-bottom:1rem;}
+@media(min-width:640px){.grid-cards{grid-template-columns:repeat(4,1fr);}}
+.card{background:var(--card); border-radius:var(--radius); padding:.9rem; box-shadow:0 1px 3px rgba(2,7,51,.06); border:1px solid var(--linha);}
+.card .label{font-size:.72rem; color:var(--ink-soft); margin-bottom:.25rem;}
+.card .value{font-family:var(--serif); font-size:1.3rem; font-weight:700; color:var(--azul-fenix);}
+.card .value.neg{color:var(--negativo);}
+.card .value.pos{color:var(--positivo);}
+.section{background:var(--card); border-radius:var(--radius); padding:1rem; margin-bottom:1rem; border:1px solid var(--linha);}
+
+/* ---- estágio ---- */
+.estagios{display:flex; gap:.35rem; overflow-x:auto; padding:.4rem 0 .7rem; margin-bottom:.4rem;}
+.estagios .e{
+  flex:0 0 auto; padding:.4rem .7rem; border-radius:999px; font-size:.72rem; background:var(--bg);
+  color:var(--ink-soft); border:1px solid var(--linha); white-space:nowrap;
+}
+.estagios .e.now{background:var(--azul-fenix); color:#fff; font-weight:700; border-color:var(--azul-fenix);}
+
+/* ---- listas ---- */
+.item-row{display:flex; justify-content:space-between; align-items:center; gap:.6rem; padding:.6rem 0; border-bottom:1px solid var(--linha);}
+.item-row:last-child{border-bottom:none;}
+.item-row .meta{min-width:0;}
+.item-row .meta b{display:block; font-size:.92rem;}
+.item-row .meta small{display:block;}
+.item-row .val{font-family:var(--serif); font-weight:700; white-space:nowrap;}
+.item-row .acts button{background:none; border:none; color:var(--ink-soft); font-size:.85rem; padding:.2rem .35rem;}
+.empty-state{padding:1.2rem .5rem; text-align:center; color:var(--ink-soft);}
+
+/* ---- formulários ---- */
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:.6rem;}
+.form-grid .full{grid-column:1/-1;}
+label{display:block; font-size:.75rem; color:var(--ink-soft); margin-bottom:.2rem;}
+input[type=text],input[type=number],select{
+  width:100%; padding:.55rem .6rem; border:1px solid var(--linha); border-radius:9px; background:#fff; color:var(--ink);
+}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--dell-azul); outline-offset:1px;}
+.btn{background:var(--dell-azul); color:#fff; border:none; border-radius:10px; padding:.65rem 1rem; font-weight:600; font-size:.9rem;}
+.btn.secondary{background:#fff; color:var(--dell-azul); border:1px solid var(--dell-azul);}
+.btn.ghost{background:none; color:var(--ink-soft); border:1px solid var(--linha);}
+.btn.block{width:100%;}
+.btn.warn{background:var(--amarelo); color:var(--ink);}
+.actions-row{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.7rem;}
+
+/* ---- alertas ---- */
+.alert{background:var(--alerta-bg); border:1px solid #F0DFA0; border-radius:10px; padding:.7rem .8rem; margin-bottom:.55rem; font-size:.85rem;}
+.alert b{display:block; margin-bottom:.15rem;}
+.badge{display:inline-block; font-size:.65rem; padding:.15rem .5rem; border-radius:999px; font-weight:700;}
+.badge.proj{background:#FBF3D3; color:var(--projetado-fraco);}
+.badge.real{background:#DDEBFF; color:var(--dell-azul);}
+.badge.demo{background:#FFE6E6; color:var(--negativo);}
+
+/* ---- cascata do mês ---- */
+.cascata-item{border-left:4px solid var(--linha); padding:.5rem .7rem; margin-bottom:.5rem; border-radius:0 8px 8px 0; background:var(--bg);}
+.cascata-item.coberta{border-color:var(--positivo);}
+.cascata-item.parcial{border-color:var(--amarelo);}
+.cascata-item.descoberta{border-color:var(--negativo);}
+.cascata-item .st{font-size:.68rem; font-weight:700; text-transform:none;}
+
+/* ---- trajetória svg ---- */
+.chart-wrap{overflow-x:auto;}
+svg.chart{width:100%; min-width:560px; height:auto; font-family:var(--sans);}
+.legend{display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin-top:.5rem; font-size:.75rem;}
+.legend .li{display:flex; align-items:center; gap:.35rem;}
+.legend .sw{width:16px; height:3px; border-radius:2px;}
+
+footer.app-foot{text-align:center; font-size:.72rem; color:var(--ink-soft); padding:1.2rem 1rem 5.5rem;}
+footer.app-foot a{color:var(--dell-azul); text-decoration:none;}
+@media(min-width:900px){footer.app-foot{padding-bottom:1.2rem;}}
+
+.onboarding{max-width:480px; margin:2rem auto; padding:0 1rem;}
+.perfil-opt{display:block; width:100%; text-align:left; background:#fff; border:1px solid var(--linha); border-radius:12px; padding:.9rem 1rem; margin-bottom:.6rem; font-size:.92rem;}
+.perfil-opt.selected{border-color:var(--dell-azul); background:#EAF4FF;}
+.step-dots{display:flex; gap:.3rem; justify-content:center; margin:1rem 0;}
+.step-dots span{width:7px; height:7px; border-radius:50%; background:var(--linha);}
+.step-dots span.active{background:var(--dell-azul);}
+
+.test-row{display:flex; justify-content:space-between; padding:.4rem 0; border-bottom:1px solid var(--linha); font-size:.82rem; gap:.5rem;}
+.test-row .r{font-weight:700; white-space:nowrap;}
+.test-row .r.pass{color:var(--positivo);}
+.test-row .r.fail{color:var(--negativo);}
+
+/* ---- impressão de relatórios ---- */
+#area-impressao{display:none;}
+@media print {
+  header.app-top, nav.tabbar, footer.app-foot, .app-shell > main > .view { display:none !important; }
+  #area-impressao.ativa { display:block !important; }
+  body{ background:#fff; }
+  .rel-header{ border-bottom:2px solid var(--azul-fenix); padding-bottom:.6rem; margin-bottom:1rem; }
+  .rel-tabela{ width:100%; border-collapse:collapse; margin:.6rem 0; }
+  .rel-tabela td, .rel-tabela th{ border-bottom:1px solid var(--linha); padding:.35rem .2rem; text-align:left; font-size:.85rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="app-top">
+  <div class="mark">Fx</div>
+  <div class="title">
+    <b>Fênix | Rota da Independência</b>
+    <span>Do déficit à independência financeira.</span>
+  </div>
+  <div class="header-right">
+    <span id="sync-status" class="sync-badge ok">● Salvo neste aparelho</span>
+    <div class="ver">v2.5 · instalável (PWA)</div>
+  </div>
+</header>
+
+<div class="app-shell">
+  <nav class="tabbar" id="tabbar">
+    <button data-view="inicio" class="tab-btn"><span class="ico">🏠</span><span>Início</span></button>
+    <button data-view="mes" class="tab-btn"><span class="ico">📅</span><span>Mês</span></button>
+    <button data-view="entradas" class="tab-btn"><span class="ico">↗️</span><span>Entradas</span></button>
+    <button data-view="saidas" class="tab-btn"><span class="ico">↘️</span><span>Saídas</span></button>
+    <button data-view="dividas" class="tab-btn"><span class="ico">📉</span><span>Dívidas</span></button>
+    <button data-view="trajetoria" class="tab-btn"><span class="ico">📈</span><span>Trajetória</span></button>
+    <button data-view="cenarios" class="tab-btn"><span class="ico">🧪</span><span>E se?</span></button>
+    <button data-view="patrimonio" class="tab-btn"><span class="ico">🌱</span><span>Patrimônio</span></button>
+    <button data-view="config" class="tab-btn"><span class="ico">⚙️</span><span>Config.</span></button>
+  </nav>
+
+  <main>
+
+    <!-- ONBOARDING -->
+    <section class="view" id="view-onboarding">
+      <div class="onboarding">
+        <h1>Vamos ver como estão suas contas</h1>
+        <p><small>Leva menos de 2 minutos. Você pode detalhar tudo depois.</small></p>
+
+        <div id="ob-step-1">
+          <h2 style="margin-top:1.2rem;">Qual é a sua situação hoje?</h2>
+          <button class="perfil-opt" data-perfil="com_divida">Tenho dívidas e o mês não fecha</button>
+          <button class="perfil-opt" data-perfil="mes_aperta">O mês fecha, mas eu devo</button>
+          <button class="perfil-opt" data-perfil="sob_controle">Não devo e quero crescer</button>
+          <button class="perfil-opt" data-perfil="com_patrimonio">Já tenho patrimônio formado</button>
+        </div>
+
+        <div id="ob-step-2" class="hidden">
+          <h2 style="margin-top:1.2rem;">Quatro números para começar</h2>
+          <p><small>Valores aproximados, em reais. Dá para ajustar tudo depois.</small></p>
+          <div class="form-grid">
+            <div class="full">
+              <label for="ob-renda">Quanto entra por mês (salário + outras rendas)?</label>
+              <input type="number" id="ob-renda" min="0" step="0.01" placeholder="0,00">
+            </div>
+            <div class="full">
+              <label for="ob-custo">Quanto custa viver por mês (aluguel, contas, alimentação...)?</label>
+              <input type="number" id="ob-custo" min="0" step="0.01" placeholder="0,00">
+            </div>
+            <div class="full" id="ob-bloco-dividas-parcelas">
+              <label for="ob-parcelas">Quanto você paga de dívidas por mês (parcelas)?</label>
+              <input type="number" id="ob-parcelas" min="0" step="0.01" placeholder="0,00">
+            </div>
+            <div class="full" id="ob-bloco-dividas-saldo">
+              <label for="ob-saldo">Quanto você deve no total, hoje?</label>
+              <input type="number" id="ob-saldo" min="0" step="0.01" placeholder="0,00">
+            </div>
+            <div class="full hidden" id="ob-bloco-patrimonio">
+              <label for="ob-patrimonio">Quanto você já tem de patrimônio/reserva formado (opcional)?</label>
+              <input type="number" id="ob-patrimonio" min="0" step="0.01" placeholder="0,00">
+            </div>
+          </div>
+          <div class="actions-row">
+            <button class="btn secondary" id="ob-voltar">Voltar</button>
+            <button class="btn" id="ob-concluir">Ver meu diagnóstico</button>
+          </div>
+        </div>
+
+        <div class="actions-row" style="margin-top:1rem;">
+          <button class="btn ghost block" id="ob-demo">Prefiro só explorar com dados de exemplo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- INÍCIO -->
+    <section class="view" id="view-inicio">
+      <div id="demo-flag"></div>
+      <h1>Onde você está</h1>
+      <p><small id="inicio-sub">Estimativa inicial — vá detalhando em Entradas, Saídas e Dívidas.</small></p>
+
+      <div id="filtro-familia" class="hidden" style="margin-bottom:.7rem;">
+        <label for="sel-pessoa-filtro">Ver:</label>
+        <select id="sel-pessoa-filtro"></select>
+      </div>
+
+      <div class="estagios" id="estagios-linha"></div>
+
+      <div class="grid-cards" id="cards-inicio"></div>
+
+      <div class="section" id="alertas-box">
+        <h2>Alertas</h2>
+        <div id="alertas-lista"></div>
+      </div>
+
+      <div class="section">
+        <h2>Previsões</h2>
+        <p id="prev-zero-a-zero"></p>
+        <p id="prev-quitacao"></p>
+        <small>Cenário único "Se nada mudar" (renda constante, novos déficits viram empréstimo). Cenários com renda extra e cortes chegam na Fase 2.</small>
+      </div>
+
+      <div class="section">
+        <h2>Índice de Progressão Financeira</h2>
+        <p><small>Indicador técnico — nunca uma nota sobre você. Mistura fluxo de caixa, redução de dívida, reserva, dependência de crédito, patrimônio e renda patrimonial.</small></p>
+        <div id="indice-progressao"></div>
+      </div>
+    </section>
+
+    <!-- MÊS -->
+    <section class="view" id="view-mes">
+      <h1>Este mês: de onde para onde</h1>
+      <p><small>Cada obrigação e a fonte que a cobre. O que sobra descoberto é a lacuna do mês.</small></p>
+      <div class="section">
+        <h2>Custo de vida</h2>
+        <div id="cascata-custo"></div>
+      </div>
+      <div class="section">
+        <h2>Serviço da dívida</h2>
+        <div id="cascata-dividas"></div>
+      </div>
+      <div class="section" id="cascata-lacuna-box">
+        <h2>Resultado do mês</h2>
+        <div id="cascata-resumo"></div>
+      </div>
+
+      <div class="section">
+        <h2>Calendário de caixa</h2>
+        <p><small>Dia a dia: quando entra, quando vence, e onde o saldo pode ficar negativo.</small></p>
+        <div id="calendario-caixa"></div>
+      </div>
+    </section>
+
+    <!-- ENTRADAS -->
+    <section class="view" id="view-entradas">
+      <h1>Entradas</h1>
+      <p><small>Toda fonte de renda entra aqui — inclusive vale-alimentação/refeição, que só paga a categoria certa.</small></p>
+      <div class="section">
+        <div id="lista-fontes"></div>
+        <button class="btn block" id="btn-nova-fonte" style="margin-top:.6rem;">+ Nova fonte de renda</button>
+      </div>
+
+      <div class="section">
+        <h2>Renda Extra — atividades</h2>
+        <p><small>Motorista de aplicativo, serviços eventuais e outros bicos. O valor líquido entra automaticamente nas suas entradas.</small></p>
+        <div id="lista-atividades"></div>
+        <div class="actions-row">
+          <button class="btn secondary" id="btn-nova-atividade-motorista">+ Atividade tipo motorista (por dia/km)</button>
+          <button class="btn secondary" id="btn-nova-atividade-servico">+ Serviço eventual</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAÍDAS -->
+    <section class="view" id="view-saidas">
+      <h1>Custo de vida</h1>
+      <p><small>O que é preciso para viver — separado do que é para pagar dívidas.</small></p>
+      <div class="section">
+        <div id="lista-obrigacoes"></div>
+        <button class="btn block" id="btn-nova-obrigacao" style="margin-top:.6rem;">+ Nova despesa</button>
+      </div>
+    </section>
+
+    <!-- DÍVIDAS -->
+    <section class="view" id="view-dividas">
+      <h1>Dívidas</h1>
+      <p><small>Cadastre o que você sabe. A taxa é opcional — se você informar o valor liberado e a parcela, calculamos a taxa real.</small></p>
+      <div class="section">
+        <div id="lista-dividas"></div>
+        <button class="btn block" id="btn-nova-divida" style="margin-top:.6rem;">+ Nova dívida</button>
+      </div>
+
+      <div class="section">
+        <h2>Cartões</h2>
+        <p><small>O cartão é instrumento de pagamento, não renda. Se ele estiver com dívida rotativa/parcelada, cadastre também como dívida acima.</small></p>
+        <div id="lista-cartoes"></div>
+        <button class="btn block" id="btn-novo-cartao" style="margin-top:.6rem;">+ Novo cartão</button>
+      </div>
+    </section>
+
+    <!-- TRAJETÓRIA -->
+    <section class="view" id="view-trajetoria">
+      <h1>Trajetória</h1>
+      <p><small>Cenário "Se nada mudar": dívida total, renda e custo de vida projetados até a quitação.</small></p>
+      <div class="section chart-wrap">
+        <svg id="chart-trajetoria" class="chart" viewBox="0 0 560 300" preserveAspectRatio="xMinYMin meet"></svg>
+        <div class="legend" id="chart-legend"></div>
+      </div>
+    </section>
+
+    <!-- CENÁRIOS "E SE?" -->
+    <section class="view" id="view-cenarios">
+      <h1>Laboratório "E se?"</h1>
+      <p><small>Compare alavancas com o cenário "Se nada mudar". Nenhuma é apontada como a melhor — os números falam.</small></p>
+
+      <div class="section">
+        <h2>Alavancas</h2>
+        <div class="form-grid">
+          <div>
+            <label for="cen-renda-extra">Renda extra por mês</label>
+            <input type="number" id="cen-renda-extra" min="0" step="0.01" value="0">
+          </div>
+          <div>
+            <label for="cen-corte">Corte de despesas (%)</label>
+            <input type="number" id="cen-corte" min="0" max="90" step="1" value="0">
+          </div>
+          <div class="full">
+            <label for="cen-politica">Se faltar dinheiro no mês, o que acontece?</label>
+            <select id="cen-politica">
+              <option value="rolar">Cobre com novo empréstimo (rolar)</option>
+              <option value="atrasar">Atrasa e paga depois, com multa e mora</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn block" id="btn-simular-cenario" style="margin-top:.7rem;">Comparar com "Se nada mudar"</button>
+        <div id="resultado-cenario" style="margin-top:.8rem;"></div>
+      </div>
+
+      <div class="section">
+        <h2>Estratégias de quitação</h2>
+        <p><small>Com um valor extra fixo por mês, direcionado sempre à mesma prioridade — o que sobra de uma dívida quitada entra automaticamente na próxima.</small></p>
+        <div class="form-grid">
+          <div class="full">
+            <label for="cen-aporte">Quanto a mais você consegue pagar por mês?</label>
+            <input type="number" id="cen-aporte" min="0" step="0.01" value="0">
+          </div>
+        </div>
+        <button class="btn block" id="btn-simular-estrategia" style="margin-top:.7rem;">Comparar estratégias</button>
+        <div id="resultado-estrategia" style="margin-top:.8rem;"></div>
+      </div>
+
+      <div class="section">
+        <h2>Avaliar uma oferta de renegociação</h2>
+        <p><small>Escolha uma dívida e veja o efeito de uma nova taxa e um novo prazo.</small></p>
+        <div class="form-grid">
+          <div class="full">
+            <label for="cen-divida-oferta">Dívida</label>
+            <select id="cen-divida-oferta"></select>
+          </div>
+          <div>
+            <label for="cen-oferta-taxa">Nova taxa (% a.m.)</label>
+            <input type="number" id="cen-oferta-taxa" min="0" step="0.01">
+          </div>
+          <div>
+            <label for="cen-oferta-prazo">Novo prazo (meses)</label>
+            <input type="number" id="cen-oferta-prazo" min="1" step="1" value="36">
+          </div>
+        </div>
+        <button class="btn block" id="btn-avaliar-oferta" style="margin-top:.7rem;">Avaliar oferta</button>
+        <div id="resultado-oferta" style="margin-top:.8rem;"></div>
+      </div>
+    </section>
+
+    <!-- PATRIMÔNIO -->
+    <section class="view" id="view-patrimonio">
+      <h1>Reserva e Patrimônio</h1>
+      <p><small>O que acontece depois que as dívidas acabam — e para quem já não deve.</small></p>
+
+      <div class="section">
+        <h2>Reserva de emergência</h2>
+        <div class="form-grid">
+          <div>
+            <label for="pat-reserva-saldo">Quanto você já tem guardado?</label>
+            <input type="number" id="pat-reserva-saldo" min="0" step="0.01">
+          </div>
+          <div>
+            <label for="pat-reserva-meses">Meta: quantos meses de custo essencial?</label>
+            <input type="number" id="pat-reserva-meses" min="1" step="1">
+          </div>
+        </div>
+        <button class="btn secondary" id="btn-salvar-reserva" style="margin-top:.6rem;">Salvar</button>
+        <div id="reserva-progresso" style="margin-top:.7rem;"></div>
+      </div>
+
+      <div class="section">
+        <h2>Ativos geradores de renda e investimentos</h2>
+        <p><small>Equipamento alugado, poupança, CDB, imóvel alugado, negócio... qualquer coisa que valha algo ou gere renda.</small></p>
+        <div id="lista-ativos"></div>
+        <button class="btn block" id="btn-novo-ativo" style="margin-top:.6rem;">+ Novo ativo</button>
+      </div>
+
+      <div class="section">
+        <h2>Autossustentação e independência</h2>
+        <div class="form-grid">
+          <div>
+            <label for="pat-taxa-real">Taxa real líquida esperada (% a.a.)</label>
+            <input type="number" id="pat-taxa-real" step="0.1">
+          </div>
+          <div>
+            <label for="pat-inflacao">Inflação de referência (% a.a.)</label>
+            <input type="number" id="pat-inflacao" step="0.1">
+          </div>
+        </div>
+        <button class="btn secondary" id="btn-salvar-taxas" style="margin-top:.6rem;">Salvar</button>
+        <div class="grid-cards" id="cards-patrimonio" style="margin-top:.8rem;"></div>
+        <p id="texto-autossustentacao" style="margin-top:.4rem;"></p>
+        <p id="texto-autonomia"></p>
+        <p id="texto-alvo"><small>Patrimônio-alvo é o quanto renderia, à taxa informada acima, o suficiente para cobrir seu custo essencial todo mês — nunca uma promessa de rentabilidade, só uma referência de cálculo.</small></p>
+      </div>
+    </section>
+
+    <!-- PRIVACIDADE E TERMOS -->
+    <section class="view" id="view-legal">
+      <h1>Privacidade e Termos de Uso</h1>
+      <p><small>Fênix | Rota da Independência · Fênix Soluções Tecnológicas · última atualização: <span id="legal-data"></span></small></p>
+
+      <div class="section">
+        <h2>Este app não substitui um profissional</h2>
+        <p>O Fênix | Rota da Independência é uma ferramenta de organização e simulação financeira. Os cálculos, previsões e cenários são gerados a partir dos dados e das taxas que <b>você mesmo</b> informa — eles ajudam a enxergar consequências e comparar caminhos, mas não são uma recomendação profissional.</p>
+        <p>Para decisões importantes — renegociar uma dívida, entrar com uma ação judicial, investir, ou qualquer coisa com peso real na sua vida financeira — procure um advogado, contador ou planejador financeiro habilitado. As informações da seção Apoio (Procon, Defensoria Pública, Registrato, CVV) são de caráter informativo, podem mudar, e devem ser confirmadas nos canais oficiais antes de você agir.</p>
+      </div>
+
+      <div class="section">
+        <h2>Onde ficam os seus dados</h2>
+        <p>Tudo o que você cadastra — renda, despesas, dívidas, patrimônio — fica guardado <b>só neste aparelho</b>, no armazenamento local do seu navegador. Nada é enviado para a internet, para servidores da Fênix Soluções Tecnológicas ou para terceiros. Não usamos cookies de rastreamento, não vendemos dado nenhum, e não existe anúncio dentro do app.</p>
+        <p>Isso tem uma consequência prática importante: se você limpar os dados do navegador, trocar de aparelho, ou desinstalar o app sem fazer backup, os dados <b>se perdem</b> — não há como recuperá-los, porque nunca existiram em outro lugar. Por isso o app oferece exportação de backup (JSON) em Configurações; recomendamos usar isso com alguma regularidade.</p>
+        <p id="legal-firebase-nota"><small>Nota sobre o futuro: estamos preparando o app para, futuramente, sincronizar dados entre aparelhos usando um projeto Firebase dedicado e separado dos demais sistemas Fênix, exatamente por lidar com dado financeiro sensível. Quando isso acontecer, esta política será atualizada antes de a sincronização ser ativada, e você poderá optar por continuar usando apenas localmente.</small></p>
+      </div>
+
+      <div class="section">
+        <h2>Dados que você compartilha entre pessoas (modo família)</h2>
+        <p>Se você usar o modo família, os dados marcados como de uma pessoa específica ficam visíveis para quem tiver acesso a este mesmo aparelho e a este app. O modo família não cria contas nem login separados — é uma forma de organizar os dados dentro do mesmo armazenamento local.</p>
+      </div>
+
+      <div class="section">
+        <h2>Seus direitos sobre os seus dados</h2>
+        <p>Como os dados ficam só no seu aparelho, você já tem controle total sobre eles, a qualquer momento, direto em Configurações:</p>
+        <ul style="padding-left:1.2rem; font-size:.9rem;">
+          <li><b>Ver e exportar</b> tudo que está cadastrado (backup em JSON, ou CSV de dívidas/despesas)</li>
+          <li><b>Corrigir ou excluir</b> qualquer item individualmente, nas telas de Entradas, Saídas, Dívidas etc.</li>
+          <li><b>Apagar tudo de uma vez</b>, com o botão "Apagar todos os dados"</li>
+        </ul>
+        <p>Este texto segue o espírito da Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018), ainda que, hoje, o app não colete nem processe dado pessoal em nenhum servidor — o que limita a aplicação de várias obrigações da lei a este momento específico do produto. Este documento é um resumo em linguagem simples, não uma peça jurídica; para uso comercial mais amplo, recomendamos revisão por um advogado antes da publicação oficial.</p>
+      </div>
+
+      <div class="section">
+        <h2>Contato</h2>
+        <p>Dúvidas sobre privacidade, termos, ou qualquer parte do app: <a href="https://wa.me/5579999680880" target="_blank" rel="noopener">fale com a Fênix Soluções Tecnológicas</a>.</p>
+      </div>
+
+      <button class="btn secondary" id="btn-legal-voltar">Voltar</button>
+    </section>
+
+    <!-- CONFIGURAÇÕES -->
+    <section class="view" id="view-config">
+      <h1>Configurações</h1>
+
+      <div class="section">
+        <h2>Menu</h2>
+        <p><small>Por padrão, o app mostra só o que faz sentido para o seu momento — quem está em déficit não precisa ver Patrimônio ainda. Ligue o modo avançado se quiser ver tudo sempre.</small></p>
+        <label style="display:flex; align-items:center; gap:.5rem; font-size:.9rem; color:var(--ink);">
+          <input type="checkbox" id="cfg-modo-avancado" style="width:auto;"> Mostrar todas as abas sempre (modo avançado)
+        </label>
+      </div>
+
+      <div class="section">
+        <h2>Parâmetros da simulação</h2>
+        <div class="form-grid">
+          <div>
+            <label for="cfg-taxa-rolagem">Taxa de um novo empréstimo de cobertura (% a.m.)</label>
+            <input type="number" id="cfg-taxa-rolagem" step="0.01" min="0">
+          </div>
+          <div>
+            <label for="cfg-parcelas-rolagem">Parcelas desse empréstimo</label>
+            <input type="number" id="cfg-parcelas-rolagem" step="1" min="1">
+          </div>
+          <div>
+            <label for="cfg-horizonte">Horizonte da projeção (meses)</label>
+            <input type="number" id="cfg-horizonte" step="1" min="12">
+          </div>
+        </div>
+        <button class="btn secondary" id="cfg-salvar" style="margin-top:.7rem;">Salvar parâmetros</button>
+      </div>
+
+      <div class="section">
+        <h2>Dados</h2>
+        <div class="actions-row">
+          <button class="btn secondary" id="btn-carregar-demo">Carregar exemplo</button>
+          <button class="btn ghost" id="btn-remover-demo">Remover exemplo</button>
+        </div>
+        <div class="actions-row">
+          <button class="btn secondary" id="btn-exportar">Exportar backup (JSON)</button>
+          <button class="btn secondary" id="btn-importar-trigger">Importar backup</button>
+          <input type="file" id="btn-importar-input" accept="application/json" class="hidden">
+        </div>
+        <div class="actions-row">
+          <button class="btn secondary" id="btn-exportar-csv-dividas">Exportar dívidas (CSV)</button>
+          <button class="btn secondary" id="btn-exportar-csv-obrigacoes">Exportar despesas (CSV)</button>
+        </div>
+        <div class="actions-row">
+          <button class="btn secondary" id="btn-importar-csv-trigger">Importar despesas de uma planilha (CSV)</button>
+          <input type="file" id="btn-importar-csv-input" accept=".csv,text/csv" class="hidden">
+        </div>
+        <p><small>A planilha precisa ter colunas <code>nome</code> e <code>valor</code> (separadas por ; ou ,). Uma coluna <code>classificacao</code> é opcional.</small></p>
+        <div class="actions-row">
+          <button class="btn warn" id="btn-refazer-onboarding">Refazer onboarding</button>
+          <button class="btn ghost" id="btn-apagar-tudo">Apagar todos os dados</button>
+        </div>
+        <p style="margin-top:.6rem;"><small>Seus dados ficam só neste aparelho. Nada é enviado para a internet.</small></p>
+      </div>
+
+      <div class="section">
+        <h2>Modo família</h2>
+        <p><small>Cadastre quem divide as contas com você. Marque uma despesa/dívida/renda como de uma pessoa específica; o que não for marcado conta para todos.</small></p>
+        <div id="lista-pessoas"></div>
+        <button class="btn block" id="btn-nova-pessoa" style="margin-top:.6rem;">+ Nova pessoa</button>
+      </div>
+
+      <div class="section">
+        <h2>Relatórios</h2>
+        <p><small>Abrem numa página limpa para você imprimir ou salvar como PDF pelo próprio navegador (Ctrl/Cmd+P → "Salvar como PDF").</small></p>
+        <div class="actions-row">
+          <button class="btn secondary" id="btn-relatorio-mensal">Relatório mensal</button>
+          <button class="btn secondary" id="btn-relatorio-renegociacao">Relatório para renegociação</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Verificar cálculos</h2>
+        <p><small>Roda os testes de aceite do motor financeiro (Parte L do Prompt Mestre).</small></p>
+        <button class="btn secondary" id="btn-rodar-testes">Rodar autoteste</button>
+        <div id="testes-resultado" style="margin-top:.6rem;"></div>
+      </div>
+
+      <div class="section">
+        <h2>Apoio</h2>
+        <p><small>Informações públicas e gratuitas. Programas e telefones podem mudar — confira antes de contar com eles.</small></p>
+        <div class="alert"><b>Procon</b>Reclamações sobre cobranças indevidas, contratos e renegociação com fornecedores.</div>
+        <div class="alert"><b>Defensoria Pública</b>Orientação jurídica gratuita, inclusive para ações de revisão de dívidas e superendividamento.</div>
+        <div class="alert"><b>Registrato (Banco Central)</b>Consulta gratuita de todas as suas dívidas e contratos em instituições financeiras.</div>
+        <div class="alert"><b>CVV — 188</b>Apoio emocional gratuito e sigiloso, 24h por dia, por telefone, chat ou e-mail.</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="app-foot">
+  © <span id="ano"></span> Fênix Soluções Tecnológicas ·
+  <a href="https://wa.me/5579999680880" target="_blank" rel="noopener">Cristiano Fênix</a>
+  · <a href="#" id="link-legal">Privacidade e Termos</a>
+</footer>
+
+<div id="area-impressao"></div>
+
+<script>
+/* =========================================================
+   MOTOR FINANCEIRO — valores monetários em CENTAVOS (inteiros)
+   ========================================================= */
+function pmt(pv, i, n) {
+  if (i === 0) return Math.round(pv / n);
+  const factor = i / (1 - Math.pow(1 + i, -n));
+  return pv * factor;
+}
+function impliedRate(pv, parcela, n, lo, hi) {
+  lo = lo === undefined ? 0.0001 : lo; hi = hi === undefined ? 0.35 : hi;
+  for (let k = 0; k < 100; k++) {
+    const mid = (lo + hi) / 2;
+    const p = pmt(pv, mid, n);
+    if (p > parcela) hi = mid; else lo = mid;
+  }
+  return (lo + hi) / 2;
+}
+function amToAa(i) { return Math.pow(1 + i, 12) - 1; }
+function simulateSingleDebt(saldoInicial, taxaAm, parcela) {
+  let bal = saldoInicial; const rows = []; let m = 0;
+  while (bal > 0.5 && m < 2000) {
+    m++; bal = bal * (1 + taxaAm);
+    const pay = Math.min(parcela, bal); bal -= pay;
+    rows.push({ mes: m, pagamento: pay, saldo: Math.max(bal, 0) });
+  }
+  return rows;
+}
+function autonomia(patrimonio, retiradaMensal, taxaMensal) {
+  taxaMensal = taxaMensal || 0;
+  if (retiradaMensal <= 0) return Infinity;
+  if (taxaMensal === 0) return patrimonio / retiradaMensal;
+  const cobre = patrimonio * taxaMensal >= retiradaMensal;
+  if (cobre) return Infinity;
+  return -Math.log(1 - (patrimonio * taxaMensal) / retiradaMensal) / Math.log(1 + taxaMensal);
+}
+function patrimonioAlvo(custoMensal, taxaRealLiquidaMensal) {
+  return custoMensal / taxaRealLiquidaMensal;
+}
+function simularSeNadaMudar(p) {
+  let contratosBase = p.dividas.map(d => Object.assign({}, d));
+  let contratosRolagem = [];
+  const linhas = [];
+  let totalRolado = 0, totalPagoRolagem = 0;
+  let primeiroMesSemDeficit = null, ultimoMesComRolagemAtiva = null, semSolucao = false;
+  const horizonte = p.horizonteMeses || 240;
+
+  for (let mes = 1; mes <= horizonte; mes++) {
+    contratosBase.forEach(c => { if (c.saldo > 0) c.saldo *= (1 + c.taxaAm); });
+    contratosRolagem.forEach(c => { if (c.saldo > 0) c.saldo *= (1 + c.taxaAm); });
+
+    let servicoBase = 0;
+    contratosBase.forEach(c => {
+      if (c.saldo > 0) { const pay = Math.min(c.parcela, c.saldo); c.saldo -= pay; servicoBase += pay; }
+    });
+    let servicoRolagem = 0;
+    contratosRolagem.forEach(c => {
+      if (c.restantes > 0 && c.saldo > 0) { const pay = Math.min(c.parcela, c.saldo); c.saldo -= pay; c.restantes -= 1; servicoRolagem += pay; }
+    });
+    contratosRolagem = contratosRolagem.filter(c => c.restantes > 0 && c.saldo > 0.5);
+
+    const necessidade = p.custoDeVida + servicoBase + servicoRolagem;
+    const deficit = necessidade - p.rendaLiquidaMensal;
+    let novoEmprestimo = 0;
+    if (deficit > 0.5) {
+      novoEmprestimo = deficit;
+      const parcelaNova = pmt(novoEmprestimo, p.taxaRolagemAm, p.parcelasRolagem);
+      contratosRolagem.push({ saldo: novoEmprestimo, parcela: parcelaNova, restantes: p.parcelasRolagem, taxaAm: p.taxaRolagemAm });
+      totalRolado += novoEmprestimo;
+      totalPagoRolagem += parcelaNova * p.parcelasRolagem;
+    } else if (primeiroMesSemDeficit === null) {
+      primeiroMesSemDeficit = mes;
+    }
+    if (contratosRolagem.length > 0) ultimoMesComRolagemAtiva = mes;
+
+    const dividaTotal = contratosBase.reduce((s, c) => s + Math.max(c.saldo, 0), 0)
+                       + contratosRolagem.reduce((s, c) => s + Math.max(c.saldo, 0), 0);
+
+    linhas.push({ mes: mes, servicoBase: servicoBase, servicoRolagem: servicoRolagem, necessidade: necessidade,
+      deficit: Math.max(deficit, 0), novoEmprestimo: novoEmprestimo, dividaTotal: dividaTotal,
+      rendaLiquidaMensal: p.rendaLiquidaMensal, custoDeVida: p.custoDeVida });
+
+    if (dividaTotal > p.rendaLiquidaMensal * 1000) { semSolucao = true; break; }
+    const semDividaAtiva = contratosBase.every(c => c.saldo <= 0.5) && contratosRolagem.length === 0;
+    if (semDividaAtiva && deficit <= 0.5) break;
+  }
+  const ultima = linhas[linhas.length - 1];
+  const quitacao = ultima && ultima.dividaTotal <= 0.5 && !semSolucao ? ultima.mes : null;
+  return { linhas: linhas, primeiroMesSemDeficit: primeiroMesSemDeficit, mesQuitacaoTotal: quitacao,
+    ultimoMesComRolagemAtiva: ultimoMesComRolagemAtiva, totalRolado: totalRolado, totalPagoRolagem: totalPagoRolagem,
+    jurosRolagem: totalPagoRolagem - totalRolado, semSolucao: semSolucao };
+}
+function calcularEstagio(o) {
+  const semIrregularidade = o.mesesConsolidacao.every(function(m){ return !m.houveCobertura && !m.houveAtraso && !m.houveRotativoEmDespesa; });
+  const comprometeu = o.mesesConsolidacao.some(function(m){ return m.houveCobertura || m.houveAtraso || m.houveRotativoEmDespesa; });
+  const limiar = o.rendaLiquida * o.L;
+  if (o.resultadoMensal < 0) return 'E1_DEFICIT';
+  if (comprometeu) return 'E2_RECUPERACAO';
+  if (o.autossustentacao >= 100) return 'E7_INDEPENDENCIA';
+  if (o.dividaNaoProdutiva > 0 && semIrregularidade && o.resultadoMensal < limiar) return 'E3_EQUILIBRIO_REAL';
+  if (o.dividaNaoProdutiva > 0 && semIrregularidade && o.resultadoMensal >= limiar) return 'E4_QUITACAO';
+  if (o.dividaNaoProdutiva <= 0 && o.reserva < o.metaReserva) return 'E5_RESERVA';
+  if (o.dividaNaoProdutiva <= 0 && o.reserva >= o.metaReserva && o.autossustentacao < 100) return 'E6_ACUMULACAO';
+  return 'E1_DEFICIT';
+}
+
+/* ---- Fase 3: renda extra, calendário de caixa, provisões anuais ---- */
+function calcularAtividadeMotorista(a) {
+  const custoKmTotal = (a.custoPorKm.combustivel || 0) + (a.custoPorKm.manutencao || 0) + (a.custoPorKm.depreciacao || 0);
+  const custoVariavelDia = custoKmTotal * a.kmDia;
+  const brutoDia = a.faturamentoDia;
+  const impostoDia = brutoDia * (a.impostosPct || 0);
+  const liquidoDia = brutoDia - custoVariavelDia - impostoDia - (a.custosFixosDia || 0);
+  const diasMes = a.diasSemana * 4.33;
+  const liquidoMes = liquidoDia * diasMes;
+  const liquidoHora = a.horasDia > 0 ? liquidoDia / a.horasDia : 0;
+  const liquidoKm = a.kmDia > 0 ? liquidoDia / a.kmDia : 0;
+  return { liquidoDia: liquidoDia, liquidoMes: liquidoMes, liquidoHora: liquidoHora, liquidoKm: liquidoKm, diasMes: diasMes };
+}
+function calcularAtividadeServico(s) {
+  const impostoValor = s.valorBruto * (s.impostosPct || 0);
+  const liquido = s.valorBruto - (s.materiais || 0) - (s.custoDeslocamento || 0) - impostoValor;
+  const horasTotais = (s.horasServico || 0) + (s.deslocamentoH || 0);
+  const liquidoHora = horasTotais > 0 ? liquido / horasTotais : 0;
+  return { liquido: liquido, liquidoHora: liquidoHora, horasTotais: horasTotais };
+}
+function calcularCalendarioCaixa(o) {
+  const dias = o.dias || 30;
+  const porDia = [];
+  let saldo = o.saldoInicial || 0;
+  for (let d = 1; d <= dias; d++) {
+    const entrouHoje = o.entradas.filter(function(e){ return e.dia === d; }).reduce(function(s,e){ return s + e.valor; }, 0);
+    const saiuHoje = o.saidas.filter(function(s){ return s.dia === d; }).reduce(function(s,x){ return s + x.valor; }, 0);
+    saldo += entrouHoje - saiuHoje;
+    porDia.push({ dia: d, entrou: entrouHoje, saiu: saiuHoje, saldo: saldo, critico: saldo < 0 });
+  }
+  const diasCriticos = porDia.filter(function(p){ return p.critico; }).map(function(p){ return p.dia; });
+  const piorSaldo = Math.min.apply(null, porDia.map(function(p){ return p.saldo; }).concat([o.saldoInicial || 0]));
+  return { porDia: porDia, diasCriticos: diasCriticos, piorSaldo: piorSaldo };
+}
+function provisaoMensalAnual(valorAnual) { return valorAnual / 12; }
+function compararServicoVsTurno(servico, atividadeMotorista) {
+  const s = calcularAtividadeServico(servico);
+  const liquidoTurnoMotorista = atividadeMotorista.liquidoDia * (servico.turnosOcupados || 1);
+  const diferenca = s.liquido - liquidoTurnoMotorista;
+  return { liquidoServico: s.liquido, liquidoTurnoPerdido: liquidoTurnoMotorista, diferenca: diferenca, valeAPena: diferenca > 0 };
+}
+
+/* ---- Fase 4: reserva, ativos/payback, patrimônio, autossustentação, autonomia, independência, índice de progressão ---- */
+function metaReservaCalc(custoEssencialMensal, mesesMeta) { return custoEssencialMensal * mesesMeta; }
+function progressoReserva(reservaAtual, meta) { return meta > 0 ? Math.min(reservaAtual / meta, 1) : 0; }
+function paybackAtivo(custoAtivo, geracaoLiquidaMensal) {
+  if (geracaoLiquidaMensal <= 0) return Infinity;
+  return custoAtivo / geracaoLiquidaMensal;
+}
+function patrimonioLiquidoTotal(ativos) { return ativos.reduce(function(s,a){ return s + (a.valorAtual || 0); }, 0); }
+function rendaPatrimonialMensal(ativos) { return ativos.reduce(function(s,a){ return s + (a.rendaMensalLiquida || 0); }, 0); }
+function indiceAutossustentacao(rendaPatrimonial, custoEssencial) {
+  if (custoEssencial <= 0) return 0;
+  return (rendaPatrimonial / custoEssencial) * 100;
+}
+function taxaMensalDeAnual(taxaAnual) { return Math.pow(1 + taxaAnual, 1 / 12) - 1; }
+function valorReal(valorNominal, inflacaoAcumulada) { return valorNominal / (1 + inflacaoAcumulada); }
+function poderDeCompraFuturo(valorHoje, inflacaoAnual, anos) { return valorHoje / Math.pow(1 + inflacaoAnual, anos); }
+function indiceProgressao(o) {
+  const pesos = o.pesos || { fluxo: 25, divida: 25, reserva: 15, credito: 15, patrimonio: 10, rendaPatrimonial: 10 };
+  function clamp(v) { return Math.max(0, Math.min(100, v)); }
+  const scoreFluxo = o.rendaLiquida > 0 ? clamp(100 * (o.resultadoMensal / o.rendaLiquida + 0.20) / 0.30) : 0;
+  const scoreDivida = clamp(o.reducaoDividaPct * 100);
+  const scoreReserva = clamp((o.metaReserva > 0 ? o.reserva / o.metaReserva : 0) * 100);
+  const scoreCredito = clamp(100 - (o.mesesComCoberturaUlt6 / 6) * 100);
+  const scorePatrimonio = clamp((o.patrimonioAlvo > 0 ? o.patrimonioLiquido / o.patrimonioAlvo : 0) * 100);
+  const scoreRendaPatrimonial = clamp(o.autossustentacao);
+  const total = (scoreFluxo * pesos.fluxo + scoreDivida * pesos.divida + scoreReserva * pesos.reserva +
+    scoreCredito * pesos.credito + scorePatrimonio * pesos.patrimonio + scoreRendaPatrimonial * pesos.rendaPatrimonial) / 100;
+  return { total: total, detalhe: { scoreFluxo: scoreFluxo, scoreDivida: scoreDivida, scoreReserva: scoreReserva,
+    scoreCredito: scoreCredito, scorePatrimonio: scorePatrimonio, scoreRendaPatrimonial: scoreRendaPatrimonial } };
+}
+
+/* ---- Fase 5: modo família, CSV ---- */
+function agregarPorPessoa(itens, pessoaId) {
+  if (!pessoaId) return itens;
+  return itens.filter(function(i){ return !i.pessoaId || i.pessoaId === pessoaId; });
+}
+function parseCSV(texto) {
+  const sep = texto.indexOf(';') > -1 && texto.indexOf(';') < texto.indexOf('\n') ? ';' : ',';
+  const linhas = texto.split(/\r?\n/).filter(function(l){ return l.trim().length > 0; });
+  if (linhas.length === 0) return { header: [], rows: [] };
+  const header = linhas[0].split(sep).map(function(h){ return h.trim().toLowerCase(); });
+  const rows = linhas.slice(1).map(function(l) {
+    const cols = l.split(sep); const obj = {};
+    header.forEach(function(h, i) { obj[h] = (cols[i] || '').trim(); });
+    return obj;
+  });
+  return { header: header, rows: rows };
+}
+function paraCSV(linhas, colunas) {
+  const header = colunas.join(';');
+  const corpo = linhas.map(function(l) { return colunas.map(function(c){ return String(l[c] === undefined ? '' : l[c]).replace(/;/g, ','); }).join(';'); }).join('\n');
+  return header + '\n' + corpo;
+}
+function simularCenario(p) {
+  const renda = p.rendaLiquidaMensal + (p.rendaExtraMensal || 0);
+  const custo = p.custoDeVida * (1 - (p.corteDespesasPct || 0));
+  let contratosBase = p.dividas.map(function(d){ return Object.assign({}, d); });
+  let contratosRolagem = [];
+  let atraso = 0;
+  const moraAm = p.moraAm !== undefined ? p.moraAm : 0.01;
+  const multaPct = p.multaPct !== undefined ? p.multaPct : 0.02;
+  const politica = p.politica || 'rolar';
+  const horizonte = p.horizonteMeses || 240;
+  const linhas = [];
+  let totalRolado = 0, totalPagoRolagem = 0, primeiroMesSemDeficit = null, semSolucao = false;
+
+  for (let mes = 1; mes <= horizonte; mes++) {
+    contratosBase.forEach(function(c){ if (c.saldo > 0) c.saldo *= (1 + c.taxaAm); });
+    contratosRolagem.forEach(function(c){ if (c.saldo > 0) c.saldo *= (1 + c.taxaAm); });
+    if (atraso > 0) atraso *= (1 + moraAm);
+
+    let servicoBase = 0;
+    contratosBase.forEach(function(c){ if (c.saldo > 0) { const pay = Math.min(c.parcela, c.saldo); c.saldo -= pay; servicoBase += pay; } });
+    let servicoRolagem = 0;
+    contratosRolagem.forEach(function(c){ if (c.restantes > 0 && c.saldo > 0) { const pay = Math.min(c.parcela, c.saldo); c.saldo -= pay; c.restantes -= 1; servicoRolagem += pay; } });
+    contratosRolagem = contratosRolagem.filter(function(c){ return c.restantes > 0 && c.saldo > 0.5; });
+
+    const necessidade = custo + servicoBase + servicoRolagem;
+    const deficit = necessidade - renda;
+    let novoEmprestimo = 0;
+
+    if (politica === 'rolar') {
+      if (deficit > 0.5) {
+        novoEmprestimo = deficit;
+        const parcelaNova = pmt(novoEmprestimo, p.taxaRolagemAm, p.parcelasRolagem);
+        contratosRolagem.push({ saldo: novoEmprestimo, parcela: parcelaNova, restantes: p.parcelasRolagem, taxaAm: p.taxaRolagemAm });
+        totalRolado += novoEmprestimo; totalPagoRolagem += parcelaNova * p.parcelasRolagem;
+      } else if (primeiroMesSemDeficit === null) primeiroMesSemDeficit = mes;
+    } else {
+      if (deficit > 0.5) {
+        atraso += deficit * (1 + multaPct);
+      } else if (deficit < -0.5 && atraso > 0) {
+        const sobra = -deficit; const abate = Math.min(sobra, atraso); atraso -= abate;
+        if (atraso <= 0.5 && primeiroMesSemDeficit === null) primeiroMesSemDeficit = mes;
+      } else if (deficit <= 0.5 && atraso <= 0.5 && primeiroMesSemDeficit === null) {
+        primeiroMesSemDeficit = mes;
+      }
+    }
+
+    const dividaTotal = contratosBase.reduce(function(s,c){ return s + Math.max(c.saldo, 0); }, 0)
+                       + contratosRolagem.reduce(function(s,c){ return s + Math.max(c.saldo, 0); }, 0)
+                       + Math.max(atraso, 0);
+
+    linhas.push({ mes: mes, servicoBase: servicoBase, servicoRolagem: servicoRolagem, necessidade: necessidade,
+      deficit: Math.max(deficit, 0), novoEmprestimo: novoEmprestimo, dividaTotal: dividaTotal, atraso: Math.max(atraso, 0) });
+
+    if (dividaTotal > renda * 1000) { semSolucao = true; break; }
+    const semDividaAtiva = contratosBase.every(function(c){ return c.saldo <= 0.5; }) && contratosRolagem.length === 0 && atraso <= 0.5;
+    if (semDividaAtiva && deficit <= 0.5) break;
+  }
+  const ultima = linhas[linhas.length - 1];
+  const quitacao = ultima && ultima.dividaTotal <= 0.5 && !semSolucao ? ultima.mes : null;
+  return { linhas: linhas, primeiroMesSemDeficit: primeiroMesSemDeficit, mesQuitacaoTotal: quitacao, totalRolado: totalRolado,
+    totalPagoRolagem: totalPagoRolagem, jurosRolagem: totalPagoRolagem - totalRolado, semSolucao: semSolucao };
+}
+
+/* ---- Fase 2: avaliador de oferta de renegociação ---- */
+function avaliarOferta(o) {
+  const rowsAtual = simulateSingleDebt(o.saldoAtual, o.taxaAtual, o.parcelaAtual);
+  const totalAtual = rowsAtual.reduce(function(s, r){ return s + r.pagamento; }, 0);
+  const jurosAtual = totalAtual - o.saldoAtual;
+  const parcelaNova = pmt(o.saldoAtual, o.novaTaxa, o.novoPrazo);
+  const totalNovo = parcelaNova * o.novoPrazo;
+  const jurosNovo = totalNovo - o.saldoAtual;
+  return { prazoAtualMeses: rowsAtual.length, totalAtual: totalAtual, jurosAtual: jurosAtual,
+    parcelaNova: parcelaNova, prazoNovoMeses: o.novoPrazo, totalNovo: totalNovo, jurosNovo: jurosNovo,
+    sobraMensal: o.parcelaAtual - parcelaNova, diferencaJuros: jurosNovo - jurosAtual };
+}
+
+/* ---- Fase 2: estratégias de quitação com aporte extra (bola de neve / maior juros) + efeito dominó ---- */
+function simularEstrategiaQuitacao(o) {
+  let contratos = o.dividas.map(function(d){ return Object.assign({ quitadaNoMes: null }, d); });
+  const eventos = [];
+  let totalJuros = 0, mes = 0;
+  const horizonte = o.horizonteMeses || 240;
+  function ordenar() {
+    const ativos = contratos.filter(function(c){ return c.saldo > 0.5; });
+    if (o.ordem === 'maior_taxa') return ativos.sort(function(a,b){ return b.taxaAm - a.taxaAm; });
+    return ativos.sort(function(a,b){ return a.saldo - b.saldo; });
+  }
+  while (contratos.some(function(c){ return c.saldo > 0.5; }) && mes < horizonte) {
+    mes++;
+    let extraDoMes = o.aporteExtraMensal;
+    contratos.forEach(function(c) {
+      if (c.saldo > 0) {
+        const juros = c.saldo * c.taxaAm; totalJuros += juros; c.saldo += juros;
+        const pay = Math.min(c.parcela, c.saldo); c.saldo -= pay;
+        if (c.saldo <= 0.5 && c.quitadaNoMes === null) { c.quitadaNoMes = mes; extraDoMes += c.parcela; eventos.push({ mes: mes, dividaId: c.id, valorLiberado: c.parcela }); }
+      }
+    });
+    const prioridade = ordenar();
+    let restante = extraDoMes;
+    for (let k = 0; k < prioridade.length; k++) {
+      const c = prioridade[k];
+      if (restante <= 0.5) break;
+      const abate = Math.min(restante, c.saldo); c.saldo -= abate; restante -= abate;
+      if (c.saldo <= 0.5 && c.quitadaNoMes === null) { c.quitadaNoMes = mes; eventos.push({ mes: mes, dividaId: c.id, valorLiberado: c.parcela }); }
+    }
+  }
+  return { prazoMeses: mes, totalJuros: totalJuros, eventos: eventos,
+    dividasQuitadasEm: contratos.map(function(c){ return { id: c.id, mes: c.quitadaNoMes, saldoFinal: c.saldo }; }) };
+}
+
+/* =========================================================
+   ESTADO E PERSISTÊNCIA
+   ========================================================= */
+const STORAGE_KEY = 'fenixFinanceiroV1';
+const ESTAGIOS_INFO = {
+  E1_DEFICIT: { label: 'Déficit', emoji: '🔴' },
+  E2_RECUPERACAO: { label: 'Recuperação', emoji: '🟠' },
+  E3_EQUILIBRIO_REAL: { label: 'Equilíbrio real', emoji: '🟡' },
+  E4_QUITACAO: { label: 'Quitação em curso', emoji: '🟢' },
+  E5_RESERVA: { label: 'Reserva', emoji: '🔵' },
+  E6_ACUMULACAO: { label: 'Acumulação', emoji: '🟣' },
+  E7_INDEPENDENCIA: { label: 'Independência', emoji: '⭐' }
+};
+const ESTAGIOS_ORDEM = ['E1_DEFICIT','E2_RECUPERACAO','E3_EQUILIBRIO_REAL','E4_QUITACAO','E5_RESERVA','E6_ACUMULACAO','E7_INDEPENDENCIA'];
+
+function estadoPadrao() {
+  return {
+    schemaVersion: 1,
+    onboardingDone: false,
+    perfil: null,
+    demo: false,
+    fontesRenda: [],
+    obrigacoes: [],
+    dividas: [],
+    config: { taxaRolagemAm: 2.2, parcelasRolagem: 10, horizonteMeses: 60, metaReservaMeses: 6, N: 3, L: 5,
+      taxaRealLiquidaAa: 6, inflacaoAa: 4, modoAvancado: false },
+    atividades: [],
+    cartoes: [],
+    reserva: { saldo: 0 },
+    ativos: [],
+    dividaInicialRegistrada: null,
+    pessoas: [],
+    pessoaFiltroAtiva: null
+  };
+}
+let state = carregarEstado();
+
+function carregarEstado() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return estadoPadrao();
+    const parsed = JSON.parse(raw);
+    return Object.assign(estadoPadrao(), parsed);
+  } catch (e) { return estadoPadrao(); }
+}
+
+/* ---------------------------------------------------------------
+   PONTO ÚNICO DE GRAVAÇÃO — preparado para o Firebase, sem usá-lo ainda.
+   Hoje: grava só no localStorage, de forma imediata.
+   Quando o projeto Firebase dedicado existir, só o MIOLO desta função
+   muda (para algo como setDoc(doc(db,'usuarios',uid,'estado','atual'),
+   state)); nenhum dos ~30 lugares que chamam salvarEstado() no resto
+   do app precisa mudar, porque todos já tratam isto como uma operação
+   que pode ser assíncrona — chamam a função e seguem em frente, sem
+   depender do retorno para atualizar a tela (a tela já usa o `state`
+   em memória, que é atualizado antes de salvar).
+   O indicador visível no topo (#sync-status) é o mesmo "Firebase sync
+   indicator" que já é padrão nos outros apps Fênix — hoje ele só
+   confirma que gravou no aparelho; no futuro passa a mostrar
+   "sincronizando com a nuvem" e "sincronizado" sem trocar de lugar.
+   --------------------------------------------------------------- */
+function definirStatusSync(status) {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  const labels = { salvo: '● Salvo neste aparelho', salvando: '○ Salvando…', offline: '⚠ Não foi possível salvar' };
+  const classes = { salvo: 'ok', salvando: 'pending', offline: 'erro' };
+  el.textContent = labels[status] || '';
+  el.className = 'sync-badge ' + (classes[status] || '');
+}
+function salvarEstado() {
+  definirStatusSync('salvando');
+  return new Promise(function(resolve) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      definirStatusSync('salvo');
+      resolve(true);
+    } catch (e) {
+      definirStatusSync('offline');
+      resolve(false);
+    }
+  });
+}
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+
+/* =========================================================
+   FORMATAÇÃO
+   ========================================================= */
+function toCent(v) { const n = parseFloat(v); return isNaN(n) ? 0 : Math.round(n * 100); }
+function fromCent(c) { return (c || 0) / 100; }
+function fmtBRL(cents) {
+  const v = fromCent(cents);
+  return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+function fmtPct(x, casas) { return (x * 100).toFixed(casas === undefined ? 2 : casas) + '%'; }
+
+/* =========================================================
+   CÁLCULOS DERIVADOS DO ESTADO
+   ========================================================= */
+function frequenciaParaMensal(valorLiquidoCent, frequencia) {
+  switch (frequencia) {
+    case 'diaria': return valorLiquidoCent * 22;
+    case 'semanal': return valorLiquidoCent * 4.33;
+    case 'quinzenal': return valorLiquidoCent * 2;
+    case 'mensal': return valorLiquidoCent;
+    case 'anual': return valorLiquidoCent / 12;
+    default: return valorLiquidoCent;
+  }
+}
+// Pura: renda efetivamente disponível para cobrir qualquer obrigação/dívida —
+// renda restrita só entra até o limite do que a categoria dela precisa; o excedente
+// (saldo restrito) não é contado, porque não pode pagar aluguel nem parcela.
+function calcularRendaDisponivel(fontesRenda, obrigacoes) {
+  let livre = 0;
+  const restritaPorCategoria = {};
+  fontesRenda.forEach(function(f) {
+    const mensal = frequenciaParaMensal(f.valorLiquido, f.frequencia);
+    if (f.restrito) {
+      const cat = f.categoriaRestrita || 'outros';
+      restritaPorCategoria[cat] = (restritaPorCategoria[cat] || 0) + mensal;
+    } else {
+      livre += mensal;
+    }
+  });
+  let usoRestrito = 0, saldoRestritoNaoUsavel = 0;
+  Object.keys(restritaPorCategoria).forEach(function(cat) {
+    const custoCategoria = obrigacoes.filter(function(o){ return o.categoria === cat; }).reduce(function(s,o){ return s + o.valor; }, 0);
+    const usado = Math.min(restritaPorCategoria[cat], custoCategoria);
+    usoRestrito += usado;
+    saldoRestritoNaoUsavel += restritaPorCategoria[cat] - usado;
+  });
+  return { disponivel: livre + usoRestrito, saldoRestritoNaoUsavel: saldoRestritoNaoUsavel };
+}
+function rendaMensalTotal() {
+  const itens = agregarPorPessoa(state.fontesRenda, state.pessoaFiltroAtiva);
+  return itens.reduce(function(s, f) { return s + frequenciaParaMensal(f.valorLiquido, f.frequencia); }, 0);
+}
+function rendaDisponivelMensal() {
+  const fontes = agregarPorPessoa(state.fontesRenda, state.pessoaFiltroAtiva);
+  const obrig = agregarPorPessoa(state.obrigacoes, state.pessoaFiltroAtiva);
+  return calcularRendaDisponivel(fontes, obrig).disponivel;
+}
+function rendaRestritaPorCategoria() {
+  const mapa = {};
+  state.fontesRenda.filter(function(f){ return f.restrito; }).forEach(function(f) {
+    const cat = f.categoriaRestrita || 'outros';
+    mapa[cat] = (mapa[cat] || 0) + frequenciaParaMensal(f.valorLiquido, f.frequencia);
+  });
+  return mapa;
+}
+function custoDeVidaTotal() {
+  return agregarPorPessoa(state.obrigacoes, state.pessoaFiltroAtiva).reduce(function(s, o) { return s + o.valor; }, 0);
+}
+function servicoDaDividaTotal() {
+  return agregarPorPessoa(state.dividas, state.pessoaFiltroAtiva).reduce(function(s, d) { return s + d.parcela; }, 0);
+}
+function dividaTotalAtual() {
+  return agregarPorPessoa(state.dividas, state.pessoaFiltroAtiva).reduce(function(s, d) { return s + d.saldoAtual; }, 0);
+}
+function dividasParaMotor() {
+  return state.dividas.map(function(d) {
+    return { saldo: fromCent(d.saldoAtual), taxaAm: (d.taxaAm || 0) / 100, parcela: fromCent(d.parcela) };
+  });
+}
+function rodarSimulacao() {
+  const renda = fromCent(rendaDisponivelMensal());
+  const custo = fromCent(custoDeVidaTotal());
+  const dividas = dividasParaMotor();
+  if (dividas.length === 0) return null;
+  return simularSeNadaMudar({
+    rendaLiquidaMensal: renda, custoDeVida: custo, dividas: dividas,
+    taxaRolagemAm: (state.config.taxaRolagemAm || 0) / 100,
+    parcelasRolagem: state.config.parcelasRolagem || 10,
+    horizonteMeses: state.config.horizonteMeses || 60
+  });
+}
+function estagioAtual() {
+  const renda = fromCent(rendaDisponivelMensal());
+  const custo = fromCent(custoDeVidaTotal());
+  const servico = fromCent(servicoDaDividaTotal());
+  const resultado = renda - custo - servico;
+  const sim = rodarSimulacao();
+  const houveCoberturaEsteMes = sim && sim.linhas[0] && sim.linhas[0].novoEmprestimo > 0.5;
+  const rendaPatrimonial = rendaPatrimonialMensal(state.ativos.map(function(a){ return { rendaMensalLiquida: fromCent(a.rendaMensalLiquida) }; }));
+  const custoEssencial = fromCent(custoEssencialMensal());
+  const autossust = indiceAutossustentacao(rendaPatrimonial, custoEssencial);
+  const meta = metaReservaCalc(custoEssencial, state.config.metaReservaMeses);
+  return calcularEstagio({
+    resultadoMensal: resultado,
+    dividaNaoProdutiva: fromCent(dividaTotalAtual()),
+    mesesConsolidacao: [{ houveCobertura: houveCoberturaEsteMes }, {}, {}],
+    rendaLiquida: renda, L: (state.config.L || 5) / 100,
+    reserva: fromCent(state.reserva.saldo), metaReserva: meta, autossustentacao: autossust
+  });
+}
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+const VIEWS = ['onboarding','inicio','mes','entradas','saidas','dividas','trajetoria','cenarios','patrimonio','config','legal'];
+function irPara(view) {
+  VIEWS.forEach(function(v) {
+    document.getElementById('view-' + v).classList.toggle('active', v === view);
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.view === view);
+  });
+  if (view !== 'onboarding') renderTudo();
+  window.scrollTo(0, 0);
+}
+document.getElementById('tabbar').addEventListener('click', function(e) {
+  const btn = e.target.closest('.tab-btn');
+  if (btn) irPara(btn.dataset.view);
+});
+
+/* =========================================================
+   ONBOARDING
+   ========================================================= */
+document.querySelectorAll('.perfil-opt').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.perfil-opt').forEach(function(b){ b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    state.perfil = btn.dataset.perfil;
+    document.getElementById('ob-step-1').classList.add('hidden');
+    document.getElementById('ob-step-2').classList.remove('hidden');
+    // pula o bloco de dívidas para quem não deve; pergunta patrimônio para quem já tem
+    const temDivida = (state.perfil === 'com_divida' || state.perfil === 'mes_aperta');
+    document.getElementById('ob-bloco-dividas-parcelas').classList.toggle('hidden', !temDivida);
+    document.getElementById('ob-bloco-dividas-saldo').classList.toggle('hidden', !temDivida);
+    document.getElementById('ob-bloco-patrimonio').classList.toggle('hidden', state.perfil !== 'com_patrimonio');
+  });
+});
+document.getElementById('ob-voltar').addEventListener('click', function() {
+  document.getElementById('ob-step-2').classList.add('hidden');
+  document.getElementById('ob-step-1').classList.remove('hidden');
+});
+document.getElementById('ob-concluir').addEventListener('click', function() {
+  const renda = toCent(document.getElementById('ob-renda').value || 0);
+  const custo = toCent(document.getElementById('ob-custo').value || 0);
+  const temDivida = (state.perfil === 'com_divida' || state.perfil === 'mes_aperta');
+  const parcelas = temDivida ? toCent(document.getElementById('ob-parcelas').value || 0) : 0;
+  const saldo = temDivida ? toCent(document.getElementById('ob-saldo').value || 0) : 0;
+  const patrimonioInicial = state.perfil === 'com_patrimonio' ? toCent(document.getElementById('ob-patrimonio').value || 0) : 0;
+
+  state.fontesRenda = [{ id: uid(), nome: 'Renda principal', tipo: 'salario', garantia: 'garantida',
+    valorLiquido: renda, frequencia: 'mensal', restrito: false }];
+  state.obrigacoes = [{ id: uid(), nome: 'Custo de vida (geral)', categoria: 'moradia',
+    classificacao: 'essencial', tipo: 'fixa', valor: custo }];
+  if (saldo > 0) {
+    state.dividas = [{ id: uid(), credor: 'Dívidas em geral', tipo: 'outras', finalidade: 'consumo',
+      saldoAtual: saldo, taxaAm: 3, parcela: parcelas, parcelasTotal: null, parcelasPagas: null,
+      valorLiberado: null, prioridade: 1 }];
+  }
+  if (patrimonioInicial > 0) { state.reserva.saldo = patrimonioInicial; }
+  state.onboardingDone = true;
+  state.demo = false;
+  salvarEstado();
+  irPara('inicio');
+});
+document.getElementById('ob-demo').addEventListener('click', function() {
+  carregarDemo();
+  state.onboardingDone = true;
+  salvarEstado();
+  irPara('inicio');
+});
+
+/* =========================================================
+   ENTRADAS — CRUD de fontes de renda
+   ========================================================= */
+function renderFontes() {
+  const box = document.getElementById('lista-fontes');
+  if (state.fontesRenda.length === 0) {
+    box.innerHTML = '<div class="empty-state">Nenhuma fonte de renda cadastrada ainda.</div>';
+    return;
+  }
+  box.innerHTML = state.fontesRenda.map(function(f) {
+    const mensal = frequenciaParaMensal(f.valorLiquido, f.frequencia);
+    const restr = f.restrito ? ' · restrita a ' + (f.categoriaRestrita || 'categoria') : '';
+    return '<div class="item-row">' +
+      '<div class="meta"><b>' + escapeHtml(f.nome) + '</b><small>' + garantiaLabel(f.garantia) + ' · ' + freqLabel(f.frequencia) + restr + '</small></div>' +
+      '<div class="val">' + fmtBRL(mensal) + '<small style="display:block;font-weight:400;">/mês</small></div>' +
+      '<div class="acts"><button data-del-fonte="' + f.id + '">Excluir</button></div>' +
+      '</div>';
+  }).join('');
+}
+function garantiaLabel(g) {
+  return { garantida: 'Garantida', recorrente_variavel: 'Variável recorrente', eventual: 'Eventual', extraordinaria: 'Extraordinária' }[g] || g;
+}
+function freqLabel(f) {
+  return { diaria: 'diária', semanal: 'semanal', quinzenal: 'quinzenal', mensal: 'mensal', anual: 'anual' }[f] || f;
+}
+document.getElementById('btn-nova-fonte').addEventListener('click', function() {
+  const nome = prompt('Nome da fonte de renda (ex.: Salário, Motorista de app, Ticket alimentação):');
+  if (!nome) return;
+  const valor = prompt('Valor líquido recebido:');
+  if (valor === null) return;
+  const freq = prompt('Frequência: diaria, semanal, quinzenal, mensal ou anual', 'mensal') || 'mensal';
+  const garantia = prompt('Garantia: garantida, recorrente_variavel, eventual ou extraordinaria', 'garantida') || 'garantida';
+  const restritoResp = prompt('Essa renda só pode ser usada para uma categoria específica (ex.: alimentação)? Digite a categoria, ou deixe em branco se não.', '');
+  state.fontesRenda.push({
+    id: uid(), nome: nome, tipo: 'outra', garantia: garantia,
+    valorLiquido: toCent(valor), frequencia: freq,
+    restrito: !!restritoResp, categoriaRestrita: restritoResp || null
+  });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-fontes').addEventListener('click', function(e) {
+  const id = e.target.dataset.delFonte;
+  if (id) {
+    state.fontesRenda = state.fontesRenda.filter(function(f){ return f.id !== id; });
+    salvarEstado(); renderTudo();
+  }
+});
+
+/* =========================================================
+   SAÍDAS — CRUD de obrigações (custo de vida)
+   ========================================================= */
+function renderObrigacoes() {
+  const box = document.getElementById('lista-obrigacoes');
+  if (state.obrigacoes.length === 0) {
+    box.innerHTML = '<div class="empty-state">Nenhuma despesa cadastrada ainda.</div>';
+    return;
+  }
+  box.innerHTML = state.obrigacoes.map(function(o) {
+    const tag = o.tipo === 'anual' ? ' · provisão anual' : '';
+    return '<div class="item-row">' +
+      '<div class="meta"><b>' + escapeHtml(o.nome) + '</b><small>' + classificacaoLabel(o.classificacao) + tag + '</small></div>' +
+      '<div class="val">' + fmtBRL(o.valor) + '</div>' +
+      '<div class="acts"><button data-del-obrig="' + o.id + '">Excluir</button></div>' +
+      '</div>';
+  }).join('');
+}
+function classificacaoLabel(c) {
+  return { essencial: 'Essencial', importante: 'Importante', desejavel: 'Desejável', superflua: 'Supérflua', extraordinaria: 'Extraordinária' }[c] || c;
+}
+document.getElementById('btn-nova-obrigacao').addEventListener('click', function() {
+  const nome = prompt('Nome da despesa (ex.: Aluguel, Alimentação, Internet, IPTU):');
+  if (!nome) return;
+  const tipo = confirm('É uma despesa que se repete todo mês? OK = mensal, Cancelar = anual (IPTU, IPVA, matrícula...)') ? 'fixa' : 'anual';
+  let valorMensal;
+  if (tipo === 'anual') {
+    const valorAnual = parseFloat(prompt('Valor anual total:') || '0');
+    valorMensal = provisaoMensalAnual(valorAnual);
+    alert('Provisão mensal automática: ' + fmtBRL(toCent(valorMensal)) + '/mês, para você já ir guardando.');
+  } else {
+    valorMensal = parseFloat(prompt('Valor mensal:') || '0');
+  }
+  const classificacao = prompt('Classificação: essencial, importante, desejavel, superflua', 'essencial') || 'essencial';
+  const vencimento = parseInt(prompt('Dia do mês do vencimento (1 a 30, opcional):', '10') || '10', 10);
+  state.obrigacoes.push({ id: uid(), nome: nome, categoria: 'outras', classificacao: classificacao, tipo: tipo, valor: toCent(valorMensal), vencimentoDia: vencimento });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-obrigacoes').addEventListener('click', function(e) {
+  const id = e.target.dataset.delObrig;
+  if (id) {
+    state.obrigacoes = state.obrigacoes.filter(function(o){ return o.id !== id; });
+    salvarEstado(); renderTudo();
+  }
+});
+
+/* =========================================================
+   DÍVIDAS — CRUD + taxa implícita
+   ========================================================= */
+function renderDividas() {
+  const box = document.getElementById('lista-dividas');
+  if (state.dividas.length === 0) {
+    box.innerHTML = '<div class="empty-state">Nenhuma dívida cadastrada ainda.</div>';
+    return;
+  }
+  box.innerHTML = state.dividas.map(function(d) {
+    let taxaLinha = (d.taxaAm || 0).toFixed(2) + '% a.m.';
+    if (d.valorLiberado && d.parcelasTotal) {
+      const i = impliedRate(fromCent(d.valorLiberado), fromCent(d.parcela), d.parcelasTotal);
+      taxaLinha = fmtPct(i, 2) + ' a.m. (≈' + fmtPct(amToAa(i), 1) + ' a.a.) — taxa real calculada';
+    }
+    const jurosMes = d.saldoAtual * (d.taxaAm || 0) / 100;
+    const negativa = jurosMes >= d.parcela;
+    const avisoNeg = negativa
+      ? '<div class="alert" style="margin-top:.4rem;"><b>Esta parcela não cobre nem os juros do mês</b>O saldo desta dívida vai crescer em vez de diminuir. Vale renegociar o valor da parcela ou a taxa antes de contar com ela na projeção.</div>'
+      : '';
+    return '<div class="item-row" style="flex-direction:column; align-items:stretch;">' +
+      '<div class="item-row" style="border:none; padding:0;">' +
+      '<div class="meta"><b>' + escapeHtml(d.credor) + '</b><small>Saldo ' + fmtBRL(d.saldoAtual) + ' · parcela ' + fmtBRL(d.parcela) + '/mês · ' + taxaLinha + '</small></div>' +
+      '<div class="acts"><button data-del-divida="' + d.id + '">Excluir</button></div>' +
+      '</div>' + avisoNeg + '</div>';
+  }).join('');
+}
+document.getElementById('btn-nova-divida').addEventListener('click', function() {
+  const credor = prompt('Credor / nome da dívida (ex.: Cartão Nubank, Empréstimo Caixa):');
+  if (!credor) return;
+  const saldo = prompt('Saldo devedor atual:');
+  if (saldo === null) return;
+  const parcela = prompt('Valor da parcela mensal:');
+  if (parcela === null) return;
+  const sabeTaxa = confirm('Você sabe a taxa de juros mensal desta dívida? OK = sim, Cancelar = calcular pela parcela e valor liberado.');
+  let taxaAm = 3, valorLiberado = null, parcelasTotal = null;
+  if (sabeTaxa) {
+    taxaAm = parseFloat(prompt('Taxa mensal (% a.m.):', '3') || '3');
+  } else {
+    valorLiberado = toCent(prompt('Quanto entrou na sua conta (valor liberado)?') || saldo);
+    parcelasTotal = parseInt(prompt('Em quantas parcelas?', '10') || '10', 10);
+    const i = impliedRate(fromCent(valorLiberado), parseFloat(parcela), parcelasTotal);
+    taxaAm = i * 100;
+  }
+  state.dividas.push({
+    id: uid(), credor: credor, tipo: 'outras', finalidade: 'consumo',
+    saldoAtual: toCent(saldo), taxaAm: taxaAm, parcela: toCent(parcela),
+    parcelasTotal: parcelasTotal, parcelasPagas: null, valorLiberado: valorLiberado, prioridade: state.dividas.length + 1
+  });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-dividas').addEventListener('click', function(e) {
+  const id = e.target.dataset.delDivida;
+  if (id) {
+    state.dividas = state.dividas.filter(function(d){ return d.id !== id; });
+    salvarEstado(); renderTudo();
+  }
+});
+
+/* =========================================================
+   INÍCIO — dashboard
+   ========================================================= */
+function renderInicio() {
+  if (state.dividaInicialRegistrada === null && state.dividas.length > 0) {
+    state.dividaInicialRegistrada = dividaTotalAtual(); salvarEstado();
+  }
+  const rendaTotal = rendaMensalTotal();
+  const rendaDisponivel = rendaDisponivelMensal();
+  const custo = custoDeVidaTotal();
+  const servico = servicoDaDividaTotal();
+  const resultado = rendaDisponivel - custo - servico;
+  const dividaTotal = dividaTotalAtual();
+
+  document.getElementById('demo-flag').innerHTML = state.demo
+    ? '<span class="badge demo">Dados de exemplo</span>'
+    : '';
+
+  document.getElementById('cards-inicio').innerHTML =
+    card('Entra', fmtBRL(rendaTotal)) +
+    card('Custo de vida', fmtBRL(custo)) +
+    card('Serviço da dívida', fmtBRL(servico)) +
+    card('Resultado', fmtBRL(resultado), resultado < 0 ? 'neg' : 'pos') +
+    card('Dívida total', fmtBRL(dividaTotal)) +
+    card('Comprometimento', custo + servico > 0 && rendaDisponivel > 0 ? fmtPct((custo + servico) / rendaDisponivel, 0) : '—');
+
+  const estagio = estagioAtual();
+  document.getElementById('estagios-linha').innerHTML = ESTAGIOS_ORDEM.map(function(k) {
+    const info = ESTAGIOS_INFO[k];
+    return '<span class="e' + (k === estagio ? ' now' : '') + '">' + info.emoji + ' ' + info.label + '</span>';
+  }).join('');
+
+  const alertasBox = document.getElementById('alertas-lista');
+  const alertas = [];
+  if (resultado < 0) alertas.push({ t: 'O mês não fecha', d: 'Faltam ' + fmtBRL(-resultado) + ' para cobrir o custo de vida e as parcelas deste mês.' });
+  const sim = rodarSimulacao();
+  if (sim && sim.linhas[0] && sim.linhas[0].novoEmprestimo > 0.5) {
+    alertas.push({ t: 'Cobrindo o mês com novo crédito', d: 'No cenário "Se nada mudar", este mês precisaria de um novo empréstimo de ' + fmtBRL(Math.round(sim.linhas[0].novoEmprestimo * 100)) + '.' });
+  }
+  if (state.dividas.length === 0) alertas.push({ t: 'Nenhuma dívida cadastrada', d: 'Cadastre suas dívidas para ver a previsão de quitação.' });
+  alertasBox.innerHTML = alertas.length ? alertas.map(function(a) {
+    return '<div class="alert"><b>' + a.t + '</b>' + a.d + '</div>';
+  }).join('') : '<div class="empty-state">Sem alertas no momento.</div>';
+
+  const zeroEl = document.getElementById('prev-zero-a-zero');
+  const quitEl = document.getElementById('prev-quitacao');
+  if (!sim) {
+    zeroEl.textContent = 'Cadastre suas dívidas para ver a previsão de zero a zero.';
+    quitEl.textContent = '';
+  } else if (sim.semSolucao) {
+    zeroEl.innerHTML = '<b>Com a estrutura atual, não existe trajetória matemática para o equilíbrio</b> sem aumento de renda, redução de despesas ou renegociação das dívidas.';
+    quitEl.textContent = '';
+  } else {
+    zeroEl.innerHTML = sim.primeiroMesSemDeficit
+      ? '<b>Zero a zero:</b> mês ' + sim.primeiroMesSemDeficit + ' a partir de hoje (' + mesRotulo(sim.primeiroMesSemDeficit) + ').'
+      : '<b>Zero a zero:</b> já não há déficit no cenário atual.';
+    quitEl.innerHTML = sim.mesQuitacaoTotal
+      ? '<b>Quitação total:</b> mês ' + sim.mesQuitacaoTotal + ' (' + mesRotulo(sim.mesQuitacaoTotal) + '), rolando o déficit em novos empréstimos a ' + state.config.taxaRolagemAm + '% a.m.'
+      : '<b>Quitação total:</b> além do horizonte simulado (' + state.config.horizonteMeses + ' meses) — considere ajustar renda, despesas ou renegociação.';
+  }
+
+  // Índice de Progressão Financeira
+  const dividaAtualR = fromCent(dividaTotal);
+  const reducaoDividaPct = state.dividaInicialRegistrada && fromCent(state.dividaInicialRegistrada) > 0
+    ? Math.max(0, 1 - dividaAtualR / fromCent(state.dividaInicialRegistrada)) : 0;
+  const houveCoberturaEsteMes = sim && sim.linhas[0] && sim.linhas[0].novoEmprestimo > 0.5;
+  const rendaPatrimonial = rendaPatrimonialMensal(state.ativos.map(function(a){ return { rendaMensalLiquida: fromCent(a.rendaMensalLiquida) }; }));
+  const custoEssencial = fromCent(custoEssencialMensal());
+  const autossust = indiceAutossustentacao(rendaPatrimonial, custoEssencial);
+  const patrimonioAtual = patrimonioLiquidoTotal(state.ativos.map(function(a){ return { valorAtual: fromCent(a.valorAtual) }; })) + fromCent(state.reserva.saldo);
+  const taxaMensalCfg = taxaMensalDeAnual((state.config.taxaRealLiquidaAa || 0) / 100);
+  const alvoEssencial = taxaMensalCfg > 0 ? custoEssencial / taxaMensalCfg : 0;
+  const idx = indiceProgressao({
+    resultadoMensal: fromCent(resultado), rendaLiquida: fromCent(rendaDisponivel), reducaoDividaPct: reducaoDividaPct,
+    reserva: fromCent(state.reserva.saldo), metaReserva: metaReservaCalc(custoEssencial, state.config.metaReservaMeses),
+    mesesComCoberturaUlt6: houveCoberturaEsteMes ? 3 : 0, patrimonioLiquido: patrimonioAtual, patrimonioAlvo: alvoEssencial,
+    autossustentacao: autossust
+  });
+  document.getElementById('indice-progressao').innerHTML =
+    '<div class="card"><div class="label">Índice atual</div><div class="value">' + Math.round(idx.total) + ' / 100</div></div>' +
+    '<p style="margin-top:.5rem;"><small>Fluxo ' + Math.round(idx.detalhe.scoreFluxo) + ' · Redução de dívida ' + Math.round(idx.detalhe.scoreDivida) +
+    ' · Reserva ' + Math.round(idx.detalhe.scoreReserva) + ' · Independência do crédito ' + Math.round(idx.detalhe.scoreCredito) +
+    ' · Patrimônio ' + Math.round(idx.detalhe.scorePatrimonio) + ' · Renda patrimonial ' + Math.round(idx.detalhe.scoreRendaPatrimonial) + '</small></p>';
+}
+function card(label, value, cls) {
+  return '<div class="card"><div class="label">' + label + '</div><div class="value' + (cls ? ' ' + cls : '') + '">' + value + '</div></div>';
+}
+function mesRotulo(n) {
+  const d = new Date(); d.setMonth(d.getMonth() + n);
+  return d.toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
+}
+
+/* =========================================================
+   MÊS — cascata origem → destino (simplificada, Fase 1)
+   ========================================================= */
+function renderMes() {
+  const restrita = rendaRestritaPorCategoria();
+  let rendaLivre = state.fontesRenda.filter(function(f){ return !f.restrito; })
+    .reduce(function(s, f){ return s + frequenciaParaMensal(f.valorLiquido, f.frequencia); }, 0);
+
+  const custoBox = document.getElementById('cascata-custo');
+  custoBox.innerHTML = state.obrigacoes.length ? state.obrigacoes.map(function(o) {
+    let cobertoRestrito = 0;
+    const cat = o.categoria;
+    if (restrita[cat]) { cobertoRestrito = Math.min(restrita[cat], o.valor); restrita[cat] -= cobertoRestrito; }
+    const faltaAposRestrito = o.valor - cobertoRestrito;
+    let status = 'coberta', fonte = [];
+    if (cobertoRestrito > 0) fonte.push('renda restrita (' + fmtBRL(cobertoRestrito) + ')');
+    if (faltaAposRestrito > 0) {
+      if (rendaLivre >= faltaAposRestrito) { rendaLivre -= faltaAposRestrito; fonte.push('renda livre (' + fmtBRL(faltaAposRestrito) + ')'); }
+      else if (rendaLivre > 0) { fonte.push('renda livre parcial (' + fmtBRL(rendaLivre) + ')'); status = 'parcial'; rendaLivre = 0; }
+      else { status = 'descoberta'; }
+    }
+    return cascataItem(o.nome, o.valor, status, fonte);
+  }).join('') : '<div class="empty-state">Nenhuma despesa cadastrada.</div>';
+
+  const divBox = document.getElementById('cascata-dividas');
+  divBox.innerHTML = state.dividas.length ? state.dividas.map(function(d) {
+    let status = 'coberta', fonte = [];
+    if (rendaLivre >= d.parcela) { rendaLivre -= d.parcela; fonte.push('renda livre (' + fmtBRL(d.parcela) + ')'); }
+    else if (rendaLivre > 0) { fonte.push('renda livre parcial (' + fmtBRL(rendaLivre) + ')'); status = 'parcial'; rendaLivre = 0; }
+    else { status = 'descoberta'; }
+    return cascataItem(d.credor, d.parcela, status, fonte);
+  }).join('') : '<div class="empty-state">Nenhuma dívida cadastrada.</div>';
+
+  const lacuna = rendaLivre < 0 ? -rendaLivre : 0;
+  const sobra = rendaLivre > 0 ? rendaLivre : 0;
+  const resumo = document.getElementById('cascata-resumo');
+  if (sobra > 0 && lacuna === 0) {
+    resumo.innerHTML = '<p><b>Sobram ' + fmtBRL(sobra) + '</b> depois de cobrir custo de vida e dívidas. Vale decidir: reserva, amortização extra ou investimento.</p>';
+  } else if (lacuna > 0) {
+    resumo.innerHTML = '<p><b>Faltam ' + fmtBRL(lacuna) + '</b> para fechar o mês sem recorrer a novo crédito.</p>';
+  } else {
+    resumo.innerHTML = '<p>O mês fecha exatamente no zero a zero.</p>';
+  }
+}
+function cascataItem(nome, valor, status, fontes) {
+  const labels = { coberta: 'Coberta', parcial: 'Parcial', descoberta: 'Descoberta' };
+  return '<div class="cascata-item ' + status + '">' +
+    '<div class="item-row" style="border:none;padding:.1rem 0;">' +
+    '<div class="meta"><b>' + escapeHtml(nome) + '</b><small>' + (fontes.length ? fontes.join(' + ') : 'sem cobertura') + '</small></div>' +
+    '<div class="val">' + fmtBRL(valor) + '</div></div>' +
+    '<div class="st">' + labels[status] + '</div></div>';
+}
+
+/* =========================================================
+   TRAJETÓRIA — gráfico SVG próprio
+   ========================================================= */
+function renderTrajetoria() {
+  const svg = document.getElementById('chart-trajetoria');
+  const legend = document.getElementById('chart-legend');
+  const sim = rodarSimulacao();
+  if (!sim || sim.linhas.length === 0) {
+    svg.innerHTML = '<text x="20" y="150" fill="#4A4F6B" font-size="14">Cadastre suas dívidas para ver a trajetória.</text>';
+    legend.innerHTML = '';
+    return;
+  }
+  const linhas = sim.linhas;
+  const W = 560, H = 300, padL = 56, padR = 14, padT = 16, padB = 30;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const maxDivida = Math.max.apply(null, linhas.map(function(l){ return l.dividaTotal; }).concat([1]));
+  const maxY = maxDivida * 1.08;
+  const n = linhas.length;
+  const x = function(i) { return padL + (i / Math.max(n - 1, 1)) * plotW; };
+  const y = function(v) { return padT + plotH - (v / maxY) * plotH; };
+
+  function pathFor(getter) {
+    return linhas.map(function(l, i) { return (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(getter(l)).toFixed(1); }).join(' ');
+  }
+
+  const rendaConst = linhas[0].rendaLiquidaMensal;
+  const custoConst = linhas[0].custoDeVida;
+
+  let svgParts = [];
+  // grade horizontal
+  for (let g = 0; g <= 4; g++) {
+    const val = (maxY / 4) * g;
+    const yy = y(val);
+    svgParts.push('<line x1="' + padL + '" y1="' + yy + '" x2="' + (W - padR) + '" y2="' + yy + '" stroke="#DADCE8" stroke-width="1"/>');
+    svgParts.push('<text x="' + (padL - 8) + '" y="' + (yy + 4) + '" font-size="9" fill="#4A4F6B" text-anchor="end">' + (val / 100).toLocaleString('pt-BR', {maximumFractionDigits:0}) + '</text>');
+  }
+  // eixo x - alguns meses
+  const passo = Math.max(1, Math.round(n / 6));
+  for (let i = 0; i < n; i += passo) {
+    svgParts.push('<text x="' + x(i).toFixed(1) + '" y="' + (H - 8) + '" font-size="9" fill="#4A4F6B" text-anchor="middle">m' + linhas[i].mes + '</text>');
+  }
+  // linhas: dívida total (projetado, tracejado), renda (contínua), custo de vida (contínua)
+  svgParts.push('<path d="' + pathFor(function(l){ return l.dividaTotal; }) + '" fill="none" stroke="#9E8A06" stroke-width="2.4" stroke-dasharray="5,4"/>');
+  svgParts.push('<path d="' + pathFor(function(){ return rendaConst; }) + '" fill="none" stroke="#0076CE" stroke-width="1.6"/>');
+  svgParts.push('<path d="' + pathFor(function(){ return custoConst; }) + '" fill="none" stroke="#041273" stroke-width="1.6"/>');
+  // marcos
+  if (sim.primeiroMesSemDeficit) {
+    const idx = sim.primeiroMesSemDeficit - 1;
+    svgParts.push('<circle cx="' + x(idx).toFixed(1) + '" cy="' + y(linhas[idx].dividaTotal).toFixed(1) + '" r="4" fill="#1B6E3C"/>');
+  }
+  if (sim.mesQuitacaoTotal) {
+    const idx = sim.mesQuitacaoTotal - 1;
+    svgParts.push('<circle cx="' + x(idx).toFixed(1) + '" cy="' + y(0).toFixed(1) + '" r="5" fill="#041273"/>');
+    svgParts.push('<text x="' + x(idx).toFixed(1) + '" y="' + (y(0) - 10) + '" font-size="9" fill="#041273" text-anchor="middle">QUITADO</text>');
+  }
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.innerHTML = svgParts.join('');
+
+  legend.innerHTML =
+    legendItem('#9E8A06', 'Dívida total (projetado)') +
+    legendItem('#0076CE', 'Renda (constante no cenário)') +
+    legendItem('#041273', 'Custo de vida (constante no cenário)');
+}
+function legendItem(color, label) {
+  return '<span class="li"><span class="sw" style="background:' + color + '"></span>' + label + '</span>';
+}
+
+/* =========================================================
+   CONFIGURAÇÕES
+   ========================================================= */
+function renderConfig() {
+  document.getElementById('cfg-taxa-rolagem').value = state.config.taxaRolagemAm;
+  document.getElementById('cfg-parcelas-rolagem').value = state.config.parcelasRolagem;
+  document.getElementById('cfg-horizonte').value = state.config.horizonteMeses;
+  document.getElementById('cfg-modo-avancado').checked = !!state.config.modoAvancado;
+}
+document.getElementById('cfg-modo-avancado').addEventListener('change', function(e) {
+  state.config.modoAvancado = e.target.checked;
+  salvarEstado(); renderTudo(); aplicarMenuAdaptativo();
+});
+function aplicarMenuAdaptativo() {
+  const estagio = estagioAtual();
+  const estagioInicial = (estagio === 'E1_DEFICIT' || estagio === 'E2_RECUPERACAO');
+  const escondePatrimonio = estagioInicial && !state.config.modoAvancado;
+  const btnPatrimonio = document.querySelector('.tab-btn[data-view="patrimonio"]');
+  if (btnPatrimonio) btnPatrimonio.classList.toggle('hidden', escondePatrimonio);
+  if (escondePatrimonio && document.getElementById('view-patrimonio').classList.contains('active')) {
+    VIEWS.forEach(function(v) { document.getElementById('view-' + v).classList.toggle('active', v === 'inicio'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === 'inicio'); });
+  }
+}
+document.getElementById('cfg-salvar').addEventListener('click', function() {
+  state.config.taxaRolagemAm = parseFloat(document.getElementById('cfg-taxa-rolagem').value) || 0;
+  state.config.parcelasRolagem = parseInt(document.getElementById('cfg-parcelas-rolagem').value, 10) || 10;
+  state.config.horizonteMeses = parseInt(document.getElementById('cfg-horizonte').value, 10) || 60;
+  salvarEstado(); renderTudo();
+  alert('Parâmetros salvos.');
+});
+
+/* ---- modo demonstração ---- */
+function carregarDemo() {
+  state.demo = true;
+  state.fontesRenda = [
+    { id: uid(), nome: 'Salário', tipo: 'salario', garantia: 'garantida', valorLiquido: 300000, frequencia: 'mensal', restrito: false },
+    { id: uid(), nome: 'Ticket alimentação/refeição', tipo: 'outra', garantia: 'garantida', valorLiquido: 40000, frequencia: 'mensal', restrito: true, categoriaRestrita: 'alimentacao' },
+    { id: uid(), nome: 'Motorista de app (líquido)', tipo: 'aplicativo', garantia: 'recorrente_variavel', valorLiquido: 8760, frequencia: 'diaria', restrito: false },
+    { id: uid(), nome: 'Trabalhos eventuais (média)', tipo: 'trabalho_eventual', garantia: 'eventual', valorLiquido: 80000, frequencia: 'mensal', restrito: false }
+  ];
+  state.obrigacoes = [
+    { id: uid(), nome: 'Aluguel', categoria: 'moradia', classificacao: 'essencial', tipo: 'fixa', valor: 100000 },
+    { id: uid(), nome: 'Água, luz, internet, gás', categoria: 'moradia', classificacao: 'essencial', tipo: 'fixa', valor: 50000 },
+    { id: uid(), nome: 'Alimentação', categoria: 'alimentacao', classificacao: 'essencial', tipo: 'variavel', valor: 50000 }
+  ];
+  state.dividas = [
+    { id: uid(), credor: 'Cartão parcelado', tipo: 'cartao', finalidade: 'consumo', saldoAtual: 1400000, taxaAm: 3.5, parcela: 180000, parcelasTotal: null, parcelasPagas: null, valorLiberado: null, prioridade: 3 },
+    { id: uid(), credor: 'Empréstimo no cartão', tipo: 'rotativo', finalidade: 'cobertura', saldoAtual: 900000, taxaAm: 8.0, parcela: 140000, parcelasTotal: null, parcelasPagas: null, valorLiberado: null, prioridade: 4 },
+    { id: uid(), credor: 'Empréstimo pessoal', tipo: 'emprestimo_pessoal', finalidade: 'consumo', saldoAtual: 1500000, taxaAm: 6.0, parcela: 150000, parcelasTotal: null, parcelasPagas: null, valorLiberado: null, prioridade: 2 },
+    { id: uid(), credor: 'Cheque especial', tipo: 'cheque_especial', finalidade: 'cobertura', saldoAtual: 400000, taxaAm: 5.0, parcela: 30000, parcelasTotal: null, parcelasPagas: null, valorLiberado: null, prioridade: 5 },
+    { id: uid(), credor: 'Financiamento/consignado', tipo: 'financiamento', finalidade: 'produtiva', saldoAtual: 800000, taxaAm: 1.8, parcela: 100000, parcelasTotal: null, parcelasPagas: null, valorLiberado: null, prioridade: 1 }
+  ];
+  salvarEstado();
+}
+document.getElementById('btn-carregar-demo').addEventListener('click', function() {
+  if (confirm('Isso substitui seus dados atuais pelo exemplo. Continuar?')) { carregarDemo(); renderTudo(); }
+});
+document.getElementById('btn-remover-demo').addEventListener('click', function() {
+  state = estadoPadrao(); salvarEstado(); irPara('onboarding');
+});
+
+/* ---- backup ---- */
+document.getElementById('btn-exportar').addEventListener('click', function() {
+  const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'fenix-rota-da-independencia-backup.json'; a.click();
+  URL.revokeObjectURL(url);
+});
+document.getElementById('btn-importar-trigger').addEventListener('click', function() {
+  document.getElementById('btn-importar-input').click();
+});
+document.getElementById('btn-importar-input').addEventListener('change', function(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function() {
+    try {
+      const parsed = JSON.parse(reader.result);
+      state = Object.assign(estadoPadrao(), parsed);
+      salvarEstado(); renderTudo();
+      alert('Backup importado.');
+    } catch (err) { alert('Arquivo inválido.'); }
+  };
+  reader.readAsText(file);
+});
+document.getElementById('btn-refazer-onboarding').addEventListener('click', function() {
+  state.onboardingDone = false; salvarEstado(); irPara('onboarding');
+});
+document.getElementById('btn-apagar-tudo').addEventListener('click', function() {
+  if (confirm('Isso apaga todos os seus dados deste aparelho. Não pode ser desfeito. Continuar?')) {
+    localStorage.removeItem(STORAGE_KEY);
+    state = estadoPadrao();
+    irPara('onboarding');
+  }
+});
+
+/* ---- autoteste ---- */
+document.getElementById('btn-rodar-testes').addEventListener('click', rodarAutoteste);
+function rodarAutoteste() {
+  const out = [];
+  function checar(label, atual, esperado, tolAbs) {
+    const passou = Math.abs(atual - esperado) <= tolAbs;
+    out.push({ label: label, passou: passou, atual: atual, esperado: esperado });
+  }
+  const p1 = pmt(2250, 0.05, 10);
+  checar('T1 — parcela de R$2.250 em 10x a 5% a.m.', p1, 291.39, 0.05);
+  const i2 = impliedRate(2000, 225, 10);
+  checar('T2 — taxa implícita (2.000 → 10x de 225)', i2 * 100, 2.20, 0.02);
+  const rows3 = simulateSingleDebt(50000, 0.03, 6000);
+  checar('T3 — número de parcelas até quitar 50k a 3% a.m.', rows3.length, 10, 0);
+  checar('T3 — última parcela', rows3[9] ? rows3[9].pagamento : 0, 4412.54, 1);
+  checar('T5 — autonomia sem rendimento (100k / 2k)', autonomia(100000, 2000, 0), 50, 0.01);
+  checar('T5 — autonomia com 0,8% a.m.', autonomia(100000, 2000, 0.008), 64.1, 0.2);
+  checar('T6 — patrimônio-alvo (custo 4.000, taxa 0,5% a.m.)', patrimonioAlvo(4000, 0.005), 800000, 1);
+  const sim7 = simularSeNadaMudar({ rendaLiquidaMensal: 6000, custoDeVida: 2000,
+    dividas: [{ saldo: 50000, taxaAm: 0.03, parcela: 6000 }], taxaRolagemAm: 0.022, parcelasRolagem: 10, horizonteMeses: 240 });
+  checar('T7 — primeiro mês sem déficit', sim7.primeiroMesSemDeficit, 11, 0);
+  checar('T7 — total rolado na espiral', sim7.totalRolado, 32261, 200);
+  const sim9 = simularSeNadaMudar({ rendaLiquidaMensal: 6000, custoDeVida: 2000,
+    dividas: [{ saldo: 50000, taxaAm: 0.08, parcela: 6000 }], taxaRolagemAm: 0.12, parcelasRolagem: 10, horizonteMeses: 240 });
+  checar('T9 — cenário sem solução é detectado', sim9.semSolucao ? 1 : 0, 1, 0);
+  const oferta4 = avaliarOferta({ saldoAtual: 50000, taxaAtual: 0.03, parcelaAtual: 6000, novaTaxa: 0.025, novoPrazo: 36 });
+  checar('T4 — renegociar 50k em 36x a 2,5% a.m.: parcela', oferta4.parcelaNova, 2122.58, 0.5);
+  const sim8 = simularSeNadaMudar({ rendaLiquidaMensal: 6000, custoDeVida: 2000,
+    dividas: [{ saldo: 50000, taxaAm: 0.05, parcela: 6000 }], taxaRolagemAm: 0.08, parcelasRolagem: 10, horizonteMeses: 240 });
+  checar('T8 — cenário com taxas altas: 1º mês sem déficit', sim8.primeiroMesSemDeficit, 22, 0);
+  const t10a = calcularRendaDisponivel(
+    [{ valorLiquido: 40000, frequencia: 'mensal', restrito: true, categoriaRestrita: 'alimentacao' }],
+    [{ categoria: 'alimentacao', valor: 80000 }]
+  );
+  checar('T10 — VA/VR 400 com alimentação de 800: reduz 400 da saída', t10a.disponivel, 40000, 1);
+  const t10b = calcularRendaDisponivel(
+    [{ valorLiquido: 40000, frequencia: 'mensal', restrito: true, categoriaRestrita: 'alimentacao' }],
+    [{ categoria: 'alimentacao', valor: 30000 }]
+  );
+  checar('T10 — VA/VR 400 com alimentação de 300: só 300 usável', t10b.disponivel, 30000, 1);
+  checar('T10 — VA/VR 400 com alimentação de 300: 100 viram saldo restrito', t10b.saldoRestritoNaoUsavel, 10000, 1);
+  const motT11 = calcularAtividadeMotorista({ horasDia: 4, diasSemana: 5, kmDia: 100, faturamentoDia: 100,
+    custoPorKm: { combustivel: 0.20, manutencao: 0.03, depreciacao: 0.02 }, impostosPct: 0 });
+  const cmpT11 = compararServicoVsTurno({ valorBruto: 200, materiais: 30, custoDeslocamento: 10, horasServico: 1, deslocamentoH: 0.5, impostosPct: 0, turnosOcupados: 1 }, motT11);
+  checar('T11 — agenda exclusiva: pintura de 3 dias vale mais que o turno de app', cmpT11.valeAPena ? 1 : 0, 1, 0);
+
+  const total = out.length, passaram = out.filter(function(t){ return t.passou; }).length;
+  document.getElementById('testes-resultado').innerHTML =
+    '<p><b>' + passaram + ' de ' + total + ' testes passaram.</b></p>' +
+    out.map(function(t) {
+      return '<div class="test-row"><span>' + t.label + '</span><span class="r ' + (t.passou ? 'pass' : 'fail') + '">' +
+        (t.passou ? 'OK' : 'esperado ' + t.esperado + ', obtido ' + (Math.round(t.atual * 100) / 100)) + '</span></div>';
+    }).join('');
+}
+
+/* =========================================================
+   CENÁRIOS "E SE?"
+   ========================================================= */
+function baseParaSimulacao() {
+  return {
+    rendaLiquidaMensal: fromCent(rendaDisponivelMensal()),
+    custoDeVida: fromCent(custoDeVidaTotal()),
+    dividas: dividasParaMotor(),
+    taxaRolagemAm: (state.config.taxaRolagemAm || 0) / 100,
+    parcelasRolagem: state.config.parcelasRolagem || 10,
+    horizonteMeses: state.config.horizonteMeses || 60
+  };
+}
+function renderCenarios() {
+  const sel = document.getElementById('cen-divida-oferta');
+  if (state.dividas.length === 0) {
+    sel.innerHTML = '<option value="">Cadastre uma dívida primeiro</option>';
+  } else {
+    sel.innerHTML = state.dividas.map(function(d) {
+      return '<option value="' + d.id + '">' + escapeHtml(d.credor) + ' — saldo ' + fmtBRL(d.saldoAtual) + '</option>';
+    }).join('');
+  }
+}
+document.getElementById('btn-simular-cenario').addEventListener('click', function() {
+  const base = baseParaSimulacao();
+  if (base.dividas.length === 0) { alert('Cadastre ao menos uma dívida para simular.'); return; }
+  const rendaExtra = parseFloat(document.getElementById('cen-renda-extra').value) || 0;
+  const cortePct = (parseFloat(document.getElementById('cen-corte').value) || 0) / 100;
+  const politica = document.getElementById('cen-politica').value;
+
+  const semAlavanca = simularCenario(Object.assign({ politica: 'rolar' }, base));
+  const comAlavanca = simularCenario(Object.assign({ politica: politica, rendaExtraMensal: rendaExtra, corteDespesasPct: cortePct }, base));
+
+  function resumo(sim, titulo) {
+    if (sim.semSolucao) return '<div class="alert"><b>' + titulo + '</b>Sem trajetória matemática com esses parâmetros.</div>';
+    const zero = sim.primeiroMesSemDeficit ? 'mês ' + sim.primeiroMesSemDeficit : 'já sem déficit';
+    const quit = sim.mesQuitacaoTotal ? 'mês ' + sim.mesQuitacaoTotal : 'além do horizonte simulado';
+    const custoExtra = sim.totalRolado > 0 ? fmtBRL(Math.round(sim.jurosRolagem * 100)) + ' em juros de rolagem' : 'sem novos empréstimos de cobertura';
+    return '<div class="card" style="margin-bottom:.6rem;"><h3>' + titulo + '</h3>' +
+      '<p>Zero a zero: <b>' + zero + '</b> · Quitação total: <b>' + quit + '</b></p>' +
+      '<p><small>' + custoExtra + '</small></p></div>';
+  }
+  document.getElementById('resultado-cenario').innerHTML = resumo(semAlavanca, 'Se nada mudar') + resumo(comAlavanca, 'Com as alavancas escolhidas');
+});
+
+document.getElementById('btn-simular-estrategia').addEventListener('click', function() {
+  const aporte = fromCent(toCent(document.getElementById('cen-aporte').value || 0));
+  if (state.dividas.length === 0) { alert('Cadastre ao menos uma dívida.'); return; }
+  const dividas = state.dividas.map(function(d) { return { id: d.id, nome: d.credor, saldo: fromCent(d.saldoAtual), taxaAm: (d.taxaAm || 0) / 100, parcela: fromCent(d.parcela) }; });
+  const bola = simularEstrategiaQuitacao({ dividas: dividas, aporteExtraMensal: aporte, ordem: 'menor_saldo' });
+  const juros = simularEstrategiaQuitacao({ dividas: dividas, aporteExtraMensal: aporte, ordem: 'maior_taxa' });
+  function nomeDivida(id) { const d = state.dividas.find(function(x){ return x.id === id; }); return d ? d.credor : id; }
+  function bloco(res, titulo, desc) {
+    const eventos = res.eventos.map(function(e) {
+      return '<li>Mês ' + e.mes + ': <b>' + escapeHtml(nomeDivida(e.dividaId)) + '</b> quitada — ' + fmtBRL(Math.round(e.valorLiberado * 100)) + '/mês liberados</li>';
+    }).join('');
+    return '<div class="card" style="margin-bottom:.6rem;"><h3>' + titulo + '</h3><p><small>' + desc + '</small></p>' +
+      '<p>Prazo até quitar tudo: <b>' + res.prazoMeses + ' meses</b> · Juros totais pagos: <b>' + fmtBRL(Math.round(res.totalJuros * 100)) + '</b></p>' +
+      (eventos ? '<ul style="margin:.4rem 0 0; padding-left:1.1rem; font-size:.82rem;">' + eventos + '</ul>' : '') + '</div>';
+  }
+  document.getElementById('resultado-estrategia').innerHTML =
+    bloco(bola, 'Bola de neve (menor saldo primeiro)', 'Quita dívidas pequenas rápido — motivação mais cedo.') +
+    bloco(juros, 'Maior juros primeiro', 'Ataca antes a dívida que mais encarece — geralmente menos juros no total.') +
+    '<p><small>Nenhuma estratégia é apontada como a melhor. Compare prazo × juros × qual te motiva mais a manter o hábito.</small></p>';
+});
+
+document.getElementById('btn-avaliar-oferta').addEventListener('click', function() {
+  const id = document.getElementById('cen-divida-oferta').value;
+  const d = state.dividas.find(function(x){ return x.id === id; });
+  if (!d) { alert('Escolha uma dívida.'); return; }
+  const novaTaxa = (parseFloat(document.getElementById('cen-oferta-taxa').value) || 0) / 100;
+  const novoPrazo = parseInt(document.getElementById('cen-oferta-prazo').value, 10) || 36;
+  const r = avaliarOferta({
+    saldoAtual: fromCent(d.saldoAtual), taxaAtual: (d.taxaAm || 0) / 100, parcelaAtual: fromCent(d.parcela),
+    novaTaxa: novaTaxa, novoPrazo: novoPrazo
+  });
+  const sobraTxt = r.sobraMensal >= 0
+    ? 'A parcela nova fica ' + fmtBRL(Math.round(r.sobraMensal * 100)) + '/mês <b>menor</b>.'
+    : 'A parcela nova fica ' + fmtBRL(Math.round(-r.sobraMensal * 100)) + '/mês <b>maior</b>.';
+  const jurosTxt = r.diferencaJuros >= 0
+    ? 'Mas o total de juros pagos aumenta em ' + fmtBRL(Math.round(r.diferencaJuros * 100)) + '.'
+    : 'E o total de juros pagos ainda cai ' + fmtBRL(Math.round(-r.diferencaJuros * 100)) + '.';
+  document.getElementById('resultado-oferta').innerHTML =
+    '<div class="card"><h3>Continuar como está</h3><p>Prazo: ' + r.prazoAtualMeses + ' meses · Total pago: ' + fmtBRL(Math.round(r.totalAtual * 100)) + ' · Juros: ' + fmtBRL(Math.round(r.jurosAtual * 100)) + '</p></div>' +
+    '<div class="card" style="margin-top:.6rem;"><h3>Com a nova oferta</h3><p>Parcela: ' + fmtBRL(Math.round(r.parcelaNova * 100)) + ' · Prazo: ' + r.prazoNovoMeses + ' meses · Total pago: ' + fmtBRL(Math.round(r.totalNovo * 100)) + ' · Juros: ' + fmtBRL(Math.round(r.jurosNovo * 100)) + '</p></div>' +
+    '<p style="margin-top:.6rem;">' + sobraTxt + ' ' + jurosTxt + '</p>';
+});
+
+/* =========================================================
+   RENDA EXTRA — atividades (motorista / serviço eventual)
+   ========================================================= */
+function sincronizarFonteDaAtividade(atv) {
+  // cria/atualiza a fonte de renda ligada a esta atividade
+  let fonte = state.fontesRenda.find(function(f){ return f.atividadeId === atv.id; });
+  let liquidoMensalCent, garantia;
+  if (atv.modelo === 'por_dia_km') {
+    const r = calcularAtividadeMotorista({
+      horasDia: atv.horasDia, diasSemana: atv.diasSemana, kmDia: atv.kmDia, faturamentoDia: fromCent(atv.faturamentoDia),
+      custoPorKm: { combustivel: fromCent(atv.custoKmCombustivel), manutencao: fromCent(atv.custoKmManutencao), depreciacao: fromCent(atv.custoKmDepreciacao) },
+      impostosPct: (atv.impostosPct || 0) / 100
+    });
+    liquidoMensalCent = toCent(r.liquidoMes);
+    garantia = 'recorrente_variavel';
+    atv._calc = r;
+  } else {
+    const r = calcularAtividadeServico({
+      valorBruto: fromCent(atv.valorBruto), materiais: fromCent(atv.materiais), custoDeslocamento: fromCent(atv.custoDeslocamento),
+      horasServico: atv.horasServico, deslocamentoH: atv.deslocamentoH, impostosPct: (atv.impostosPct || 0) / 100
+    });
+    const vezesMes = atv.frequenciaMes || 1;
+    liquidoMensalCent = toCent(r.liquido) * vezesMes;
+    garantia = 'eventual';
+    atv._calc = r;
+  }
+  if (fonte) {
+    fonte.valorLiquido = liquidoMensalCent; fonte.frequencia = 'mensal'; fonte.garantia = garantia; fonte.nome = atv.nome;
+  } else {
+    state.fontesRenda.push({ id: uid(), nome: atv.nome, tipo: 'atividade', garantia: garantia, valorLiquido: liquidoMensalCent, frequencia: 'mensal', restrito: false, atividadeId: atv.id });
+  }
+}
+function renderAtividades() {
+  const box = document.getElementById('lista-atividades');
+  if (state.atividades.length === 0) { box.innerHTML = '<div class="empty-state">Nenhuma atividade cadastrada ainda.</div>'; return; }
+  box.innerHTML = state.atividades.map(function(a) {
+    sincronizarFonteDaAtividade(a);
+    let linha;
+    if (a.modelo === 'por_dia_km') {
+      linha = fmtBRL(toCent(a._calc.liquidoDia)) + '/dia líquido · ' + fmtBRL(toCent(a._calc.liquidoHora)) + '/hora · ' + fmtBRL(toCent(a._calc.liquidoKm)) + '/km';
+    } else {
+      linha = fmtBRL(toCent(a._calc.liquido)) + ' líquido por serviço · ' + fmtBRL(toCent(a._calc.liquidoHora)) + '/hora';
+    }
+    return '<div class="item-row">' +
+      '<div class="meta"><b>' + escapeHtml(a.nome) + '</b><small>' + linha + '</small></div>' +
+      '<div class="acts"><button data-del-atividade="' + a.id + '">Excluir</button></div>' +
+      '</div>';
+  }).join('');
+  salvarEstado();
+}
+document.getElementById('btn-nova-atividade-motorista').addEventListener('click', function() {
+  const nome = prompt('Nome da atividade (ex.: Motorista de aplicativo):', 'Motorista de aplicativo');
+  if (!nome) return;
+  const horasDia = parseFloat(prompt('Horas por dia:', '4') || '4');
+  const diasSemana = parseFloat(prompt('Dias por semana:', '5') || '5');
+  const kmDia = parseFloat(prompt('Km rodados por dia:', '100') || '100');
+  const faturamentoDia = parseFloat(prompt('Faturamento bruto por dia:', '100') || '100');
+  const combustivel = parseFloat(prompt('Combustível por dia (total, não por km):', '20') || '20') / (kmDia || 1);
+  const manutencao = parseFloat(prompt('Manutenção/óleo por km (estimativa):', '0.03') || '0.03');
+  const depreciacao = parseFloat(prompt('Depreciação do veículo por km (estimativa):', '0.02') || '0.02');
+  state.atividades.push({
+    id: uid(), nome: nome, modelo: 'por_dia_km', horasDia: horasDia, diasSemana: diasSemana, kmDia: kmDia,
+    faturamentoDia: toCent(faturamentoDia), custoKmCombustivel: toCent(combustivel), custoKmManutencao: toCent(manutencao),
+    custoKmDepreciacao: toCent(depreciacao), impostosPct: 0
+  });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('btn-nova-atividade-servico').addEventListener('click', function() {
+  const nome = prompt('Nome do serviço (ex.: Troca de chuveiro, Pintura):');
+  if (!nome) return;
+  const valorBruto = parseFloat(prompt('Valor bruto recebido:') || '0');
+  const materiais = parseFloat(prompt('Custo de materiais:', '0') || '0');
+  const custoDeslocamento = parseFloat(prompt('Custo de deslocamento:', '0') || '0');
+  const horasServico = parseFloat(prompt('Horas de serviço:', '1') || '1');
+  const deslocamentoH = parseFloat(prompt('Horas de deslocamento:', '0') || '0');
+  const frequenciaMes = parseFloat(prompt('Quantas vezes por mês, em média, isso acontece?', '1') || '1');
+  const novaAtividade = {
+    id: uid(), nome: nome, modelo: 'servico_eventual', valorBruto: toCent(valorBruto), materiais: toCent(materiais),
+    custoDeslocamento: toCent(custoDeslocamento), horasServico: horasServico, deslocamentoH: deslocamentoH,
+    impostosPct: 0, frequenciaMes: frequenciaMes
+  };
+  state.atividades.push(novaAtividade);
+  const motorista = state.atividades.find(function(a){ return a.modelo === 'por_dia_km'; });
+  if (motorista) {
+    const turnos = parseFloat(prompt('Quantos turnos de "' + motorista.nome + '" isso ocupa? (0 se não ocupa nenhum)', '1') || '0');
+    if (turnos > 0) {
+      const cmp = compararServicoVsTurno(
+        { valorBruto: valorBruto, materiais: materiais, custoDeslocamento: custoDeslocamento, horasServico: horasServico, deslocamentoH: deslocamentoH, impostosPct: 0, turnosOcupados: turnos },
+        (function(){ sincronizarFonteDaAtividade(motorista); return motorista._calc; })()
+      );
+      alert(cmp.valeAPena
+        ? 'Vale a pena: este serviço líquido (' + fmtBRL(toCent(cmp.liquidoServico)) + ') supera o turno de app que ele ocupa (' + fmtBRL(toCent(cmp.liquidoTurnoPerdido)) + ').'
+        : 'Atenção: este serviço líquido (' + fmtBRL(toCent(cmp.liquidoServico)) + ') rende menos que o turno de app que ele ocupa (' + fmtBRL(toCent(cmp.liquidoTurnoPerdido)) + ').');
+    }
+  }
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-atividades').addEventListener('click', function(e) {
+  const id = e.target.dataset.delAtividade;
+  if (id) {
+    state.atividades = state.atividades.filter(function(a){ return a.id !== id; });
+    state.fontesRenda = state.fontesRenda.filter(function(f){ return f.atividadeId !== id; });
+    salvarEstado(); renderTudo();
+  }
+});
+
+/* =========================================================
+   CARTÕES
+   ========================================================= */
+function renderCartoes() {
+  const box = document.getElementById('lista-cartoes');
+  if (state.cartoes.length === 0) { box.innerHTML = '<div class="empty-state">Nenhum cartão cadastrado.</div>'; return; }
+  box.innerHTML = state.cartoes.map(function(c) {
+    const aviso = c.rotativoAm > 0 ? '<div class="alert" style="margin-top:.4rem;"><b>Este cartão tem rotativo cadastrado</b>Verifique se a fatura está sendo paga integral — rotativo costuma ser a linha de crédito mais cara.</div>' : '';
+    return '<div class="item-row" style="flex-direction:column; align-items:stretch;">' +
+      '<div class="item-row" style="border:none; padding:0;">' +
+      '<div class="meta"><b>' + escapeHtml(c.nome) + '</b><small>Limite ' + fmtBRL(c.limite) + ' · fecha dia ' + c.fechamentoDia + ' · vence dia ' + c.vencimentoDia + '</small></div>' +
+      '<div class="acts"><button data-del-cartao="' + c.id + '">Excluir</button></div></div>' + aviso + '</div>';
+  }).join('');
+}
+document.getElementById('btn-novo-cartao').addEventListener('click', function() {
+  const nome = prompt('Nome do cartão:');
+  if (!nome) return;
+  const limite = toCent(prompt('Limite total:') || '0');
+  const fechamentoDia = parseInt(prompt('Dia de fechamento da fatura:', '20') || '20', 10);
+  const vencimentoDia = parseInt(prompt('Dia de vencimento da fatura:', '27') || '27', 10);
+  const temRotativo = confirm('Este cartão está usando rotativo (fatura não paga integral)? OK = sim');
+  const rotativoAm = temRotativo ? parseFloat(prompt('Taxa do rotativo (% a.m.):', '12') || '12') : 0;
+  state.cartoes.push({ id: uid(), nome: nome, limite: limite, fechamentoDia: fechamentoDia, vencimentoDia: vencimentoDia, rotativoAm: rotativoAm });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-cartoes').addEventListener('click', function(e) {
+  const id = e.target.dataset.delCartao;
+  if (id) { state.cartoes = state.cartoes.filter(function(c){ return c.id !== id; }); salvarEstado(); renderTudo(); }
+});
+
+/* =========================================================
+   CALENDÁRIO DE CAIXA
+   ========================================================= */
+function renderCalendarioCaixa() {
+  const box = document.getElementById('calendario-caixa');
+  const entradas = state.fontesRenda.map(function(f) {
+    return { dia: f.diaRecebimento || 5, valor: fromCent(frequenciaParaMensal(f.valorLiquido, f.frequencia)) };
+  });
+  const saidas = state.obrigacoes.map(function(o) { return { dia: o.vencimentoDia || 10, valor: fromCent(o.valor) }; })
+    .concat(state.dividas.map(function(d) { return { dia: d.vencimentoDia || 10, valor: fromCent(d.parcela) }; }));
+  if (entradas.length === 0 && saidas.length === 0) { box.innerHTML = '<div class="empty-state">Cadastre entradas e saídas para ver o calendário.</div>'; return; }
+  const cal = calcularCalendarioCaixa({ saldoInicial: 0, entradas: entradas, saidas: saidas, dias: 30 });
+  const tiras = cal.porDia.map(function(p) {
+    const cor = p.critico ? 'background:#FADBD8; color:#A32A2A;' : (p.entrou > 0 ? 'background:#DDEBFF;' : '#fff');
+    return '<div title="Dia ' + p.dia + ': saldo ' + fmtBRL(toCent(p.saldo)) + '" style="' + cor + ' border-radius:5px; min-width:16px; height:22px; flex:1; display:flex; align-items:center; justify-content:center; font-size:.55rem;">' + p.dia + '</div>';
+  }).join('');
+  box.innerHTML = '<div style="display:flex; gap:2px; margin-bottom:.5rem;">' + tiras + '</div>' +
+    (cal.diasCriticos.length
+      ? '<div class="alert"><b>Dias em que o saldo pode ficar negativo:</b> ' + cal.diasCriticos.join(', ') + '. Pior momento: ' + fmtBRL(toCent(cal.piorSaldo)) + '.</div>'
+      : '<p><small>Nenhum dia com saldo negativo neste mês, considerando as datas cadastradas.</small></p>');
+}
+
+/* =========================================================
+   PATRIMÔNIO — reserva, ativos, autossustentação, autonomia
+   ========================================================= */
+function custoEssencialMensal() {
+  return state.obrigacoes.filter(function(o){ return o.classificacao === 'essencial'; }).reduce(function(s,o){ return s + o.valor; }, 0)
+    || custoDeVidaTotal(); // fallback: se ninguém classificou, usa o total
+}
+function custoMensalSustento() { return custoDeVidaTotal() + servicoDaDividaTotal(); }
+
+function renderReserva() {
+  document.getElementById('pat-reserva-saldo').value = fromCent(state.reserva.saldo);
+  document.getElementById('pat-reserva-meses').value = state.config.metaReservaMeses;
+  const meta = metaReservaCalc(fromCent(custoEssencialMensal()), state.config.metaReservaMeses);
+  const prog = progressoReserva(fromCent(state.reserva.saldo), meta);
+  document.getElementById('reserva-progresso').innerHTML =
+    '<p>' + fmtBRL(state.reserva.saldo) + ' de ' + fmtBRL(toCent(meta)) + ' (' + Math.round(prog * 100) + '%)</p>' +
+    '<div style="background:#DADCE8; border-radius:999px; height:10px; overflow:hidden;">' +
+    '<div style="width:' + Math.round(prog * 100) + '%; background:#0076CE; height:100%;"></div></div>';
+}
+document.getElementById('btn-salvar-reserva').addEventListener('click', function() {
+  state.reserva.saldo = toCent(document.getElementById('pat-reserva-saldo').value || 0);
+  state.config.metaReservaMeses = parseInt(document.getElementById('pat-reserva-meses').value, 10) || 6;
+  salvarEstado(); renderTudo();
+});
+
+function renderAtivos() {
+  const box = document.getElementById('lista-ativos');
+  if (state.ativos.length === 0) { box.innerHTML = '<div class="empty-state">Nenhum ativo cadastrado.</div>'; return; }
+  box.innerHTML = state.ativos.map(function(a) {
+    const pb = paybackAtivo(fromCent(a.custoAquisicao), fromCent(a.rendaMensalLiquida));
+    const pbTxt = a.rendaMensalLiquida > 0 ? (isFinite(pb) ? pb.toFixed(1) + ' meses de payback' : '—') : 'não gera renda direta';
+    return '<div class="item-row">' +
+      '<div class="meta"><b>' + escapeHtml(a.nome) + '</b><small>Vale ' + fmtBRL(a.valorAtual) + ' · gera ' + fmtBRL(a.rendaMensalLiquida) + '/mês · ' + pbTxt + '</small></div>' +
+      '<div class="acts"><button data-del-ativo="' + a.id + '">Excluir</button></div>' +
+      '</div>';
+  }).join('');
+}
+document.getElementById('btn-novo-ativo').addEventListener('click', function() {
+  const nome = prompt('Nome do ativo (ex.: Furadeira para locação, CDB, Carro de app):');
+  if (!nome) return;
+  const custoAquisicao = toCent(prompt('Quanto custou (ou vale) adquirir?', '0') || '0');
+  const valorAtual = toCent(prompt('Quanto ele vale hoje?', String(fromCent(custoAquisicao))) || fromCent(custoAquisicao));
+  const rendaMensalLiquida = toCent(prompt('Quanto ele gera de renda líquida por mês (0 se não gera diretamente)?', '0') || '0');
+  state.ativos.push({ id: uid(), nome: nome, custoAquisicao: custoAquisicao, valorAtual: valorAtual, rendaMensalLiquida: rendaMensalLiquida });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-ativos').addEventListener('click', function(e) {
+  const id = e.target.dataset.delAtivo;
+  if (id) { state.ativos = state.ativos.filter(function(a){ return a.id !== id; }); salvarEstado(); renderTudo(); }
+});
+
+function renderPatrimonioResumo() {
+  document.getElementById('pat-taxa-real').value = state.config.taxaRealLiquidaAa;
+  document.getElementById('pat-inflacao').value = state.config.inflacaoAa;
+
+  const patrimonioAtivos = patrimonioLiquidoTotal(state.ativos.map(function(a){ return { valorAtual: fromCent(a.valorAtual) }; }));
+  const patrimonioTotal = patrimonioAtivos + fromCent(state.reserva.saldo);
+  const rendaPatrimonial = rendaPatrimonialMensal(state.ativos.map(function(a){ return { rendaMensalLiquida: fromCent(a.rendaMensalLiquida) }; }));
+  const custoEssencial = fromCent(custoEssencialMensal());
+  const autossust = indiceAutossustentacao(rendaPatrimonial, custoEssencial);
+  const taxaMensal = taxaMensalDeAnual((state.config.taxaRealLiquidaAa || 0) / 100);
+  const custoSustento = fromCent(custoMensalSustento());
+  const autonomiaMeses = autonomia(patrimonioTotal, custoSustento, taxaMensal);
+  const alvoEssencial = taxaMensal > 0 ? custoEssencial / taxaMensal : Infinity;
+
+  document.getElementById('cards-patrimonio').innerHTML =
+    card('Patrimônio líquido', fmtBRL(toCent(patrimonioTotal))) +
+    card('Renda patrimonial', fmtBRL(toCent(rendaPatrimonial)) + '/mês') +
+    card('Autossustentação', fmtPct(autossust / 100, 0)) +
+    card('Autonomia', isFinite(autonomiaMeses) ? (autonomiaMeses / 12 >= 2 ? (autonomiaMeses / 12).toFixed(1) + ' anos' : Math.round(autonomiaMeses) + ' meses') : 'indefinida (renda cobre o gasto)');
+
+  document.getElementById('texto-autossustentacao').innerHTML =
+    autossust >= 100 ? '<b>Seu patrimônio já cobre o custo essencial.</b>'
+    : '<b>Seu patrimônio cobre ' + fmtPct(autossust / 100, 0) + '</b> do custo essencial — o resto ainda depende da renda ativa.';
+  document.getElementById('texto-autonomia').innerHTML = isFinite(autonomiaMeses)
+    ? 'Se você parasse de receber qualquer renda hoje, seu patrimônio sustentaria seu padrão de vida por <b>' + (autonomiaMeses < 1 ? Math.round(autonomiaMeses * 30) + ' dias' : (autonomiaMeses/12 >=1 ? (autonomiaMeses/12).toFixed(1)+' anos' : Math.round(autonomiaMeses)+' meses')) + '</b>.'
+    : 'O rendimento do seu patrimônio, à taxa informada, já cobriria o custo mensal — autonomia indefinida.';
+  document.getElementById('texto-alvo').innerHTML =
+    (isFinite(alvoEssencial)
+      ? 'Patrimônio necessário para o rendimento cobrir só o custo essencial: <b>' + fmtBRL(toCent(alvoEssencial)) + '</b>.'
+      : 'Informe uma taxa real líquida maior que zero para calcular o patrimônio-alvo.') +
+    '<br><small>Patrimônio-alvo é o quanto renderia, à taxa informada acima, o suficiente para cobrir seu custo essencial todo mês — nunca uma promessa de rentabilidade, só uma referência de cálculo.</small>';
+}
+document.getElementById('btn-salvar-taxas').addEventListener('click', function() {
+  state.config.taxaRealLiquidaAa = parseFloat(document.getElementById('pat-taxa-real').value) || 0;
+  state.config.inflacaoAa = parseFloat(document.getElementById('pat-inflacao').value) || 0;
+  salvarEstado(); renderTudo();
+});
+function renderPatrimonio() { renderReserva(); renderAtivos(); renderPatrimonioResumo(); }
+
+/* =========================================================
+   MODO FAMÍLIA
+   ========================================================= */
+function renderPessoas() {
+  const box = document.getElementById('lista-pessoas');
+  if (state.pessoas.length === 0) { box.innerHTML = '<div class="empty-state">Ninguém cadastrado ainda — tudo conta como compartilhado.</div>'; return; }
+  box.innerHTML = state.pessoas.map(function(p) {
+    return '<div class="item-row"><div class="meta"><b>' + escapeHtml(p.nome) + '</b><small>' + pessoaTipoLabel(p.tipo) + '</small></div>' +
+      '<div class="acts"><button data-del-pessoa="' + p.id + '">Excluir</button></div></div>';
+  }).join('');
+  const filtroBox = document.getElementById('filtro-familia');
+  const sel = document.getElementById('sel-pessoa-filtro');
+  if (state.pessoas.length === 0) { filtroBox.classList.add('hidden'); return; }
+  filtroBox.classList.remove('hidden');
+  sel.innerHTML = '<option value="">Família toda</option>' + state.pessoas.map(function(p) {
+    return '<option value="' + p.id + '"' + (state.pessoaFiltroAtiva === p.id ? ' selected' : '') + '>' + escapeHtml(p.nome) + '</option>';
+  }).join('');
+}
+function pessoaTipoLabel(t) { return { titular: 'Titular', conjuge: 'Cônjuge', dependente: 'Dependente' }[t] || t; }
+document.getElementById('btn-nova-pessoa').addEventListener('click', function() {
+  const nome = prompt('Nome da pessoa:');
+  if (!nome) return;
+  const tipo = prompt('Tipo: titular, conjuge ou dependente', 'dependente') || 'dependente';
+  state.pessoas.push({ id: uid(), nome: nome, tipo: tipo });
+  salvarEstado(); renderTudo();
+});
+document.getElementById('lista-pessoas').addEventListener('click', function(e) {
+  const id = e.target.dataset.delPessoa;
+  if (id) { state.pessoas = state.pessoas.filter(function(p){ return p.id !== id; }); salvarEstado(); renderTudo(); }
+});
+document.getElementById('sel-pessoa-filtro').addEventListener('change', function(e) {
+  state.pessoaFiltroAtiva = e.target.value || null;
+  salvarEstado(); renderTudo();
+});
+
+/* =========================================================
+   EXPORTAR / IMPORTAR CSV
+   ========================================================= */
+function baixarTexto(nomeArquivo, conteudo, tipo) {
+  const blob = new Blob([conteudo], { type: tipo || 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = nomeArquivo; a.click();
+  URL.revokeObjectURL(url);
+}
+document.getElementById('btn-exportar-csv-dividas').addEventListener('click', function() {
+  const linhas = state.dividas.map(function(d) { return { credor: d.credor, saldo: fromCent(d.saldoAtual), parcela: fromCent(d.parcela), taxa_am: d.taxaAm }; });
+  baixarTexto('fenix-dividas.csv', paraCSV(linhas, ['credor', 'saldo', 'parcela', 'taxa_am']), 'text/csv');
+});
+document.getElementById('btn-exportar-csv-obrigacoes').addEventListener('click', function() {
+  const linhas = state.obrigacoes.map(function(o) { return { nome: o.nome, valor: fromCent(o.valor), classificacao: o.classificacao }; });
+  baixarTexto('fenix-despesas.csv', paraCSV(linhas, ['nome', 'valor', 'classificacao']), 'text/csv');
+});
+document.getElementById('btn-importar-csv-trigger').addEventListener('click', function() {
+  document.getElementById('btn-importar-csv-input').click();
+});
+document.getElementById('btn-importar-csv-input').addEventListener('change', function(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function() {
+    const parsed = parseCSV(reader.result);
+    if (parsed.header.indexOf('nome') === -1 || parsed.header.indexOf('valor') === -1) {
+      alert('A planilha precisa ter pelo menos as colunas "nome" e "valor".'); return;
+    }
+    let importadas = 0;
+    parsed.rows.forEach(function(r) {
+      const valor = parseFloat((r.valor || '0').replace(',', '.'));
+      if (!r.nome || isNaN(valor)) return;
+      state.obrigacoes.push({ id: uid(), nome: r.nome, categoria: 'outras', classificacao: r.classificacao || 'essencial', tipo: 'fixa', valor: toCent(valor) });
+      importadas++;
+    });
+    salvarEstado(); renderTudo();
+    alert(importadas + ' despesa(s) importada(s).');
+  };
+  reader.readAsText(file);
+});
+
+/* =========================================================
+   RELATÓRIOS IMPRIMÍVEIS
+   ========================================================= */
+function abrirImpressao(html) {
+  const area = document.getElementById('area-impressao');
+  area.innerHTML = html;
+  area.classList.add('ativa');
+  window.print();
+  setTimeout(function() { area.classList.remove('ativa'); area.innerHTML = ''; }, 500);
+}
+document.getElementById('btn-relatorio-mensal').addEventListener('click', function() {
+  const rendaTotal = rendaMensalTotal(), rendaDisp = rendaDisponivelMensal(), custo = custoDeVidaTotal(), servico = servicoDaDividaTotal();
+  const resultado = rendaDisp - custo - servico;
+  const linhasDividas = state.dividas.map(function(d) {
+    return '<tr><td>' + escapeHtml(d.credor) + '</td><td>' + fmtBRL(d.saldoAtual) + '</td><td>' + fmtBRL(d.parcela) + '</td><td>' + (d.taxaAm||0).toFixed(2) + '% a.m.</td></tr>';
+  }).join('');
+  const html = '<div class="rel-header"><h1>Fênix | Rota da Independência — Relatório Mensal</h1><p>' + new Date().toLocaleDateString('pt-BR', {month:'long', year:'numeric'}) + (state.demo ? ' · dados de exemplo' : '') + '</p></div>' +
+    '<h3>Resumo</h3><table class="rel-tabela"><tr><td>Entra</td><td>' + fmtBRL(rendaTotal) + '</td></tr>' +
+    '<tr><td>Custo de vida</td><td>' + fmtBRL(custo) + '</td></tr>' +
+    '<tr><td>Serviço da dívida</td><td>' + fmtBRL(servico) + '</td></tr>' +
+    '<tr><td><b>Resultado</b></td><td><b>' + fmtBRL(resultado) + '</b></td></tr></table>' +
+    '<h3>Dívidas</h3><table class="rel-tabela"><tr><th>Credor</th><th>Saldo</th><th>Parcela</th><th>Taxa</th></tr>' + (linhasDividas || '<tr><td colspan="4">Nenhuma</td></tr>') + '</table>' +
+    '<p style="margin-top:1.5rem;"><small>Gerado pelo Fênix | Rota da Independência — dados mantidos apenas neste aparelho.</small></p>';
+  abrirImpressao(html);
+});
+document.getElementById('btn-relatorio-renegociacao').addEventListener('click', function() {
+  const rendaDisp = rendaDisponivelMensal(), custo = custoDeVidaTotal(), servico = servicoDaDividaTotal();
+  const sobra = rendaDisp - custo; // parcela maxima possivel = tudo que sobra do custo de vida
+  const linhasDividas = state.dividas.map(function(d) {
+    return '<tr><td>' + escapeHtml(d.credor) + '</td><td>' + fmtBRL(d.saldoAtual) + '</td><td>' + fmtBRL(d.parcela) + ' atual</td></tr>';
+  }).join('');
+  const html = '<div class="rel-header"><h1>Proposta para renegociação</h1><p>Preparado em ' + new Date().toLocaleDateString('pt-BR') + '</p></div>' +
+    '<h3>Minha capacidade de pagamento</h3><table class="rel-tabela">' +
+    '<tr><td>Renda líquida disponível</td><td>' + fmtBRL(rendaDisp) + '</td></tr>' +
+    '<tr><td>Custo de vida essencial</td><td>' + fmtBRL(custo) + '</td></tr>' +
+    '<tr><td><b>Valor máximo possível para todas as dívidas somadas</b></td><td><b>' + fmtBRL(Math.max(sobra,0)) + '</b></td></tr>' +
+    '<tr><td>Hoje pago de parcelas</td><td>' + fmtBRL(servico) + '</td></tr></table>' +
+    '<h3>Dívidas em aberto</h3><table class="rel-tabela"><tr><th>Credor</th><th>Saldo</th><th>Parcela</th></tr>' + (linhasDividas || '<tr><td colspan="3">Nenhuma</td></tr>') + '</table>' +
+    '<p style="margin-top:1rem;">Peço que a nova parcela seja compatível com minha capacidade real de pagamento, mostrada acima, para eu não voltar a atrasar ou precisar de novo crédito para cobrir o mês.</p>' +
+    '<p style="margin-top:1.5rem;"><small>Documento gerado pelo Fênix | Rota da Independência a partir dos dados informados pelo usuário.</small></p>';
+  abrirImpressao(html);
+});
+
+/* =========================================================
+   UTIL
+   ========================================================= */
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function(c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+function renderTudo() {
+  renderAtividades(); renderFontes(); renderObrigacoes(); renderDividas(); renderCartoes(); renderPessoas();
+  renderInicio(); renderMes(); renderCalendarioCaixa(); renderTrajetoria(); renderCenarios(); renderPatrimonio(); renderConfig();
+}
+
+/* =========================================================
+   INICIALIZAÇÃO
+   ========================================================= */
+document.getElementById('ano').textContent = new Date().getFullYear();
+document.getElementById('legal-data').textContent = new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+document.getElementById('link-legal').addEventListener('click', function(e) { e.preventDefault(); irPara('legal'); });
+document.getElementById('btn-legal-voltar').addEventListener('click', function() { irPara('inicio'); });
+if (state.onboardingDone) { irPara('inicio'); } else { irPara('onboarding'); }
+
+/* PWA: registra o service worker se o navegador suportar; se não suportar
+   (ou se o arquivo estiver sendo visto num contexto que bloqueia isso, como
+   pode acontecer num link de pré-visualização), o app continua funcionando
+   normalmente — só sem o modo offline/instalação. */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () { /* segue sem PWA, sem quebrar o app */ });
+  });
+}
+</script>
+</body>
+</html>
