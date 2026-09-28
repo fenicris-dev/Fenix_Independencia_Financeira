@@ -11,7 +11,7 @@
  * cai para a rede, e se a rede falhar, cai para o que já estiver em cache.
  */
 
-const CACHE_NAME = 'fenix-rota-independencia-v1';
+const CACHE_NAME = 'fenix-rota-independencia-v2';
 const ARQUIVOS_DO_SHELL = [
   './fenix-rota-da-independencia.html',
   './manifest.json',
