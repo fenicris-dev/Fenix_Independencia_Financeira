@@ -2,7 +2,7 @@
   "name": "Fênix | Rota da Independência",
   "short_name": "Rota da Independência",
   "description": "Do déficit à independência financeira.",
-  "start_url": "./fenix-rota-da-independencia.html",
+  "start_url": "./",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",

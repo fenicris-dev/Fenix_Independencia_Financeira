@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roteiro de testes — Fênix | Rota da Independência</title>
+<style>
+:root{--az:#041273;--dell:#0076CE;--bg:#F3F4F9;--ln:#DADCE8;--ink:#020733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45}
+header{background:linear-gradient(120deg,#040798,var(--dell));color:#fff;padding:1rem 1.1rem}
+header h1{margin:0;font-family:Georgia,serif;font-size:1.25rem}
+header p{margin:.25rem 0 0;font-size:.85rem;opacity:.9}
+main{max-width:860px;margin:0 auto;padding:1rem}
+h2{font-family:Georgia,serif;color:var(--az);font-size:1.05rem;margin:1.4rem 0 .4rem}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+th,td{padding:.55rem .6rem;border-bottom:1px solid var(--ln);font-size:.88rem;vertical-align:top;text-align:left}
+th{background:#EEF1FA;font-size:.75rem;color:#4A4F6B}
+.c{text-align:center;width:64px}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--dell)}
+code{background:#EEF1FA;padding:.05rem .3rem;border-radius:4px}
+.box{background:#fff;border:1px solid var(--ln);border-radius:10px;padding:.8rem;margin-top:1rem}
+.box label{display:block;font-size:.75rem;color:#4A4F6B;margin:.5rem 0 .15rem}
+.box input[type=text],.box textarea{width:100%;padding:.5rem;border:1px solid var(--ln);border-radius:8px;font:inherit}
+.nota{font-size:.8rem;color:#4A4F6B}
+@media print{header{background:#fff;color:#000;border-bottom:2px solid #000}body{background:#fff}}
+</style></head><body>
+<header><h1>Roteiro de testes — Fênix | Rota da Independência</h1>
+<p>Versão testada: v2.8 · Android já aprovado; iPhone pendente</p></header>
+<main>
+<p class="nota">Como usar: marque cada item que passar. O Android já vem marcado (testado e aprovado). As marcações ficam salvas neste aparelho. Use dois valores de teste: um redondo (<code>3000</code>) e um brasileiro (<code>1.500,50</code>).</p>
+<h2>1. Abertura e instalação</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>Splash com a águia branca aparece e some sozinha em cerca de 1 segundo</td><td class="c"><input type="checkbox" data-k="a1" checked></td><td class="c"><input type="checkbox" data-k="i1"></td></tr>
+<tr><td>Ícone oficial aparece no cabeçalho e na aba do navegador</td><td class="c"><input type="checkbox" data-k="a2" checked></td><td class="c"><input type="checkbox" data-k="i2"></td></tr>
+<tr><td>Instalação: Android (menu ⋮ → Instalar app) / iPhone (Compartilhar → Adicionar à Tela de Início). Ícone e nome "Rota da Independência" corretos. <em>Pelo link de pré-visualização pode não oferecer instalar: é esperado.</em></td><td class="c"><input type="checkbox" data-k="a3" checked></td><td class="c"><input type="checkbox" data-k="i3"></td></tr>
+</tbody></table>
+<h2>2. Onboarding (os 4 perfis)</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>"Tenho dívidas e o mês não fecha": pergunta renda, custo de vida, parcelas e saldo</td><td class="c"><input type="checkbox" data-k="a4" checked></td><td class="c"><input type="checkbox" data-k="i4"></td></tr>
+<tr><td>"O mês fecha, mas eu devo": mesmas 4 perguntas</td><td class="c"><input type="checkbox" data-k="a5" checked></td><td class="c"><input type="checkbox" data-k="i5"></td></tr>
+<tr><td>"Não devo e quero crescer": <b>não</b> pergunta dívidas</td><td class="c"><input type="checkbox" data-k="a6" checked></td><td class="c"><input type="checkbox" data-k="i6"></td></tr>
+<tr><td>"Já tenho patrimônio": pergunta o patrimônio</td><td class="c"><input type="checkbox" data-k="a7" checked></td><td class="c"><input type="checkbox" data-k="i7"></td></tr>
+<tr><td>"Prefiro só explorar com dados de exemplo" carrega o exemplo</td><td class="c"><input type="checkbox" data-k="a8" checked></td><td class="c"><input type="checkbox" data-k="i8"></td></tr>
+<tr><td>Teclado numérico abre e o botão não fica coberto pelo teclado</td><td class="c"><input type="checkbox" data-k="a9" checked></td><td class="c"><input type="checkbox" data-k="i9"></td></tr>
+</tbody></table>
+<h2>3. Números no formato brasileiro</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>Nova despesa com <code>1.500,50</code> aparece como R$ 1.500,50</td><td class="c"><input type="checkbox" data-k="a10" checked></td><td class="c"><input type="checkbox" data-k="i10"></td></tr>
+<tr><td>Nova fonte de renda com <code>3.000,00</code> aparece como R$ 3.000,00</td><td class="c"><input type="checkbox" data-k="a11" checked></td><td class="c"><input type="checkbox" data-k="i11"></td></tr>
+<tr><td>Nova dívida com taxa <code>2,5</code> é aceita</td><td class="c"><input type="checkbox" data-k="a12" checked></td><td class="c"><input type="checkbox" data-k="i12"></td></tr>
+</tbody></table>
+<h2>4. Cada aba (Config. → Carregar exemplo)</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td><b>Início:</b> cards, faixa de estágios (rola de lado), alertas, previsões e Índice de Progressão</td><td class="c"><input type="checkbox" data-k="a13" checked></td><td class="c"><input type="checkbox" data-k="i13"></td></tr>
+<tr><td><b>Mês:</b> cascata origem → destino; Alimentação mostra "renda restrita"; calendário de caixa colorido</td><td class="c"><input type="checkbox" data-k="a14" checked></td><td class="c"><input type="checkbox" data-k="i14"></td></tr>
+<tr><td><b>Entradas:</b> cadastrar atividade de motorista e serviço eventual (ocupando 1 turno) mostra "Vale a pena" ou "Atenção"</td><td class="c"><input type="checkbox" data-k="a15" checked></td><td class="c"><input type="checkbox" data-k="i15"></td></tr>
+<tr><td><b>Saídas:</b> despesa <u>anual</u> (ex.: IPTU 1.200) mostra provisão de R$ 100/mês</td><td class="c"><input type="checkbox" data-k="a16" checked></td><td class="c"><input type="checkbox" data-k="i16"></td></tr>
+<tr><td><b>Dívidas:</b> parcela menor que os juros do mês mostra o alerta de que a dívida vai crescer</td><td class="c"><input type="checkbox" data-k="a17" checked></td><td class="c"><input type="checkbox" data-k="i17"></td></tr>
+<tr><td><b>Trajetória:</b> gráfico cabe na tela e rola de lado sem quebrar a página</td><td class="c"><input type="checkbox" data-k="a18" checked></td><td class="c"><input type="checkbox" data-k="i18"></td></tr>
+<tr><td><b>E se?:</b> os três blocos funcionam (alavancas, estratégias de quitação, oferta de renegociação)</td><td class="c"><input type="checkbox" data-k="a19" checked></td><td class="c"><input type="checkbox" data-k="i19"></td></tr>
+<tr><td><b>Patrimônio:</b> some quando está em Déficit; aparece ao ligar o modo avançado em Config.</td><td class="c"><input type="checkbox" data-k="a20" checked></td><td class="c"><input type="checkbox" data-k="i20"></td></tr>
+</tbody></table>
+<h2>5. Persistência e sincronização</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>Cadastrar algo, fechar o navegador por completo e reabrir: os dados continuam</td><td class="c"><input type="checkbox" data-k="a21" checked></td><td class="c"><input type="checkbox" data-k="i21"></td></tr>
+<tr><td>Selo "● Salvo neste aparelho" aparece no topo após cada mudança</td><td class="c"><input type="checkbox" data-k="a22" checked></td><td class="c"><input type="checkbox" data-k="i22"></td></tr>
+<tr><td>Exportar backup (JSON), apagar tudo e importar o arquivo de volta: tudo retorna</td><td class="c"><input type="checkbox" data-k="a23" checked></td><td class="c"><input type="checkbox" data-k="i23"></td></tr>
+</tbody></table>
+<h2>6. Modo família e relatórios</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>Cadastrar uma pessoa faz aparecer o seletor "Ver:" no Início</td><td class="c"><input type="checkbox" data-k="a24" checked></td><td class="c"><input type="checkbox" data-k="i24"></td></tr>
+<tr><td>Relatório mensal abre a impressão e dá para Salvar como PDF, com texto legível</td><td class="c"><input type="checkbox" data-k="a25" checked></td><td class="c"><input type="checkbox" data-k="i25"></td></tr>
+<tr><td>Relatório para renegociação: idem</td><td class="c"><input type="checkbox" data-k="a26" checked></td><td class="c"><input type="checkbox" data-k="i26"></td></tr>
+<tr><td>Exportar e importar CSV de despesas (colunas <code>nome</code> e <code>valor</code>)</td><td class="c"><input type="checkbox" data-k="a27" checked></td><td class="c"><input type="checkbox" data-k="i27"></td></tr>
+</tbody></table>
+<h2>7. Rodapé e textos legais</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>"Privacidade e Termos" abre, lê bem e o botão Voltar funciona</td><td class="c"><input type="checkbox" data-k="a28" checked></td><td class="c"><input type="checkbox" data-k="i28"></td></tr>
+<tr><td>Seção Apoio: canais e telefones conferem</td><td class="c"><input type="checkbox" data-k="a29" checked></td><td class="c"><input type="checkbox" data-k="i29"></td></tr>
+</tbody></table>
+<h2>8. Comportamento no aparelho</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>Girar a tela (retrato e paisagem) sem quebrar o layout</td><td class="c"><input type="checkbox" data-k="a30" checked></td><td class="c"><input type="checkbox" data-k="i30"></td></tr>
+<tr><td>Botões "Excluir" são fáceis de tocar sem errar</td><td class="c"><input type="checkbox" data-k="a31" checked></td><td class="c"><input type="checkbox" data-k="i31"></td></tr>
+<tr><td>Modo avião com o app já aberto. <em>Esperado: ainda não é 100% offline até hospedar com o sw.js.</em></td><td class="c"><input type="checkbox" data-k="a32" checked></td><td class="c"><input type="checkbox" data-k="i32"></td></tr>
+</tbody></table>
+<h2>9. Só no iPhone (Safari)</h2>
+<table><thead><tr><th>O que conferir</th><th class="c">Android</th><th class="c">iPhone</th></tr></thead><tbody>
+<tr><td>Entalhe e barra inferior não cobrem conteúdo</td><td class="c"></td><td class="c"><input type="checkbox" data-k="i33"></td></tr>
+<tr><td>Cadastros (caixas de diálogo) funcionam também no app instalado na Tela de Início</td><td class="c"></td><td class="c"><input type="checkbox" data-k="i34"></td></tr>
+<tr><td>Baixar o backup JSON funciona e dá para achar o arquivo depois (app Arquivos)</td><td class="c"></td><td class="c"><input type="checkbox" data-k="i35"></td></tr>
+<tr><td>Imprimir / Salvar em PDF os relatórios funciona</td><td class="c"></td><td class="c"><input type="checkbox" data-k="i36"></td></tr>
+<tr><td>Dados continuam depois de alguns dias sem abrir o app. <em>O Safari pode apagar dados de sites não instalados após um tempo sem uso; instalar na Tela de Início costuma evitar isso. Vale confirmar.</em></td><td class="c"></td><td class="c"><input type="checkbox" data-k="i37"></td></tr>
+</tbody></table>
+<h2>Se encontrar uma falha</h2>
+<div class="box">
+<label>Aparelho e navegador (ex.: iPhone 13 / Safari)</label><input type="text" data-k="f-aparelho">
+<label>Em qual tela e o que você fez</label><textarea rows="3" data-k="f-tela"></textarea>
+<label>O que esperava e o que aconteceu (anexe print, se possível)</label><textarea rows="3" data-k="f-resultado"></textarea>
+</div>
+</main>
+<script>
+(function(){
+  var KEY='roteiro-rota-independencia-v2.8', s={};
+  try{ s=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  function salvar(){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
+  document.querySelectorAll('[data-k]').forEach(function(el){
+    var k=el.dataset.k;
+    if(k in s){ if(el.type==='checkbox') el.checked=s[k]; else el.value=s[k]; }
+    el.addEventListener('change',function(){ s[k]=(el.type==='checkbox')?el.checked:el.value; salvar(); });
+    el.addEventListener('input',function(){ if(el.type!=='checkbox'){ s[k]=el.value; salvar(); } });
+  });
+})();
+</script></body></html>
